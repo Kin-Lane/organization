@@ -1,7 +1,7 @@
 {
   "name": "Kin Lane - Organization",
-  "description": "This is my default organization API, using it to manage posts in a single API. It is a Stack Network API resource, with supporting docker container for the API.",
-  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization-icon.png",
+  "description": "This is my default organization API, using it to manage organization using a single API. It is a Stack Network API resource, with supporting docker container for the API.",
+  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg",
   "tags": [
     "application programming interface",
     "API",
@@ -15,7 +15,7 @@
     {
       "name": "Organization",
       "description": "A organization API resource.",
-      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization-icon.png",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg",
       "humanURL": "https://kin-lane.github.io/organization/",
       "baseURL": "http://organization.api.kinlane.com",
       "tags": [
