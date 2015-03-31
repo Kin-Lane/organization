@@ -2,9 +2,9 @@
   "swagger": "2.0",
   "info": {
     "title": "Organization",
-    "description": "This is a organization api",
+    "description": "This is an organization for all my organization entries. I use a single organization system to manage all my sites. Based upon tagging, I then publish each post out to its respective Github Page based repo.",
     "termsOfService": "http://stack.network/terms-of-service.html",
-    "version": "v1"
+    "version": "v2"
   },
   "host": "organization.api.kinlane.com",
   "basePath": "/",
@@ -12,19 +12,33 @@
     "http"
   ],
   "produces": [
-    "organizationlication/json"
+    "application/json"
   ],
   "paths": {
-    "organization/": {
+    "/organization/": {
       "get": {
         "summary": "retrieves all organizations",
-        "description": "pulls all organizations, with filter by keyword",
+        "description": "retrieves all organizations, with filter by keyword",
         "operationId": "getOrganizations",
         "parameters": [
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "query",
             "in": "query",
-            "description": "a text query to search across organization",
+            "description": "a text query to search across organizations",
             "required": true,
             "type": "string"
           }
@@ -41,72 +55,138 @@
           }
         },
         "tags": [
-          "organization",
-          "organizationging"
+          "Organization"
         ]
       },
       "post": {
-        "summary": "add organization",
-        "description": "add a new organization",
+        "summary": "add a new organization",
+        "description": "Adds a new organization",
         "operationId": "addOrganization",
         "parameters": [
           {
-            "name": "name",
+            "name": "appid",
             "in": "query",
-            "description": "name of the organization",
+            "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "appkey",
             "in": "query",
-            "description": "description of the organization",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name of organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "details",
+            "in": "query",
+            "description": "details for the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "description": "sumary of the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "post_date",
+            "in": "query",
+            "description": "date the organization was added",
             "required": true,
             "type": "string"
           },
           {
             "name": "url",
             "in": "query",
-            "description": "url for the organization",
+            "description": "unique url for the organization",
             "required": true,
             "type": "string"
           },
           {
-            "name": "tags",
+            "name": "phone",
             "in": "query",
-            "description": "tags for the organization",
-            "required": true,
+            "description": "phone for the organization",
+            "required": false,
             "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "organization response",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/organization"
-              }
-            }
-          }
-        },
-        "tags": [
-          "organization",
-          "organizationging"
-        ]
-      }
-    },
-    "organization/{slug}": {
-      "get": {
-        "summary": "Retrieve a organization using its slug",
-        "description": "Returns the organization detail",
-        "operationId": "getOrganization",
-        "parameters": [
+          },
           {
-            "name": "slug",
-            "in": "path",
-            "description": "slug for the organization, notice this is in the path, not a query variable",
-            "required": "true",
+            "name": "email",
+            "in": "query",
+            "description": "email for the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "primary address of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "primary city of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "primary state of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "postal_code",
+            "in": "query",
+            "description": "primary postal code of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "primary country of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "rank",
+            "in": "query",
+            "description": "ranking for the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "description": "primary location of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "photo",
+            "in": "query",
+            "description": "primary photo of the organization",
+            "required": false,
             "type": "integer",
             "format": "id"
           }
@@ -123,49 +203,193 @@
           }
         },
         "tags": [
-          "organization",
-          "organizationging"
+          "Organization"
+        ]
+      }
+    },
+    "/organization/{organization_id}/": {
+      "get": {
+        "summary": "Retrieve a organization using its unique id",
+        "description": "Returns the an organization",
+        "operationId": "getOrganization",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "the unique id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "organization response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/organization"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Organization"
         ]
       },
       "put": {
         "summary": "update organization",
-        "description": "update organization",
+        "description": "Update Organization",
         "operationId": "updateOrganization",
         "parameters": [
           {
-            "name": "slug",
+            "name": "organization_id",
             "in": "path",
-            "description": "unique slug for the organization",
+            "description": "the unique id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "name",
             "in": "query",
-            "description": "name of the organization",
+            "description": "name of organization",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "details",
             "in": "query",
-            "description": "description of the organization",
+            "description": "details for the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "description": "sumary of the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "post_date",
+            "in": "query",
+            "description": "date the organization was added",
             "required": true,
             "type": "string"
           },
           {
             "name": "url",
             "in": "query",
-            "description": "url for the organization",
+            "description": "unique url for the organization",
             "required": true,
             "type": "string"
           },
           {
-            "name": "tags",
+            "name": "phone",
             "in": "query",
-            "description": "tags for the organization",
-            "required": true,
+            "description": "phone for the organization",
+            "required": false,
             "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "email for the organization",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "primary address of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "primary city of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "primary state of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "postal_code",
+            "in": "query",
+            "description": "primary postal code of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "primary country of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "rank",
+            "in": "query",
+            "description": "ranking for the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "description": "primary location of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "photo",
+            "in": "query",
+            "description": "primary photo of the organization",
+            "required": false,
+            "type": "integer",
+            "format": "id"
           }
         ],
         "responses": {
@@ -180,19 +404,33 @@
           }
         },
         "tags": [
-          "organization",
-          "organizationging"
+          "Organization"
         ]
       },
       "delete": {
         "summary": "delete organization",
-        "description": "deletes an organization",
+        "description": "Deletes An Organization",
         "operationId": "deleteOrganization",
         "parameters": [
           {
-            "name": "slug",
+            "name": "organization_id",
             "in": "path",
-            "description": "unique slug for the organization",
+            "description": "the unique id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           }
@@ -209,8 +447,1342 @@
           }
         },
         "tags": [
-          "organization",
-          "organizationging"
+          "Organization"
+        ]
+      }
+    },
+    "/organization/{organization_id}/tags/": {
+      "get": {
+        "summary": "retrieve organization tags",
+        "description": "Returns the tags for an organization",
+        "operationId": "getorganizationTags",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tags Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add tag to organization",
+        "description": "add tag for organization",
+        "operationId": "addOrganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "tag name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/tags/{tag}": {
+      "delete": {
+        "summary": "delete a organization tag",
+        "description": "deletes a tag applied to organization",
+        "operationId": "deleteorganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "path",
+            "description": "tag to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tag Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/notes/": {
+      "get": {
+        "summary": "retrieve an APIs notes",
+        "description": "Returns the notes for an API",
+        "operationId": "getAPINotes",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Notes Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Notes"
+        ]
+      },
+      "post": {
+        "summary": "add an API note",
+        "description": "Add a note for the API",
+        "operationId": "addAPINote",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of the note",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "note",
+            "in": "query",
+            "description": "the full text of note",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Note Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Notes"
+        ]
+      }
+    },
+    "/organization/{organization_id}/notes/{note_id}": {
+      "delete": {
+        "summary": "delete an API note",
+        "description": "Deletes a note for a API",
+        "operationId": "deleteAPINote",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "note_id",
+            "in": "path",
+            "description": "id for the note",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Note Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Notes"
+        ]
+      }
+    },
+    "/organization/{organization_id}/apis/": {
+      "get": {
+        "summary": "retrieve organization APIs",
+        "description": "Returns the APIs for an organization",
+        "operationId": "getAPIsForOrganization",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization API Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/api"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add API to organization",
+        "description": "add tag for organization",
+        "operationId": "addOrganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api_id",
+            "in": "query",
+            "description": "API unique ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization API Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/API"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/apis/{api_id}": {
+      "delete": {
+        "summary": "delete a organization API",
+        "description": "deletes a API applied to organization",
+        "operationId": "deleteOrganizationAPI",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "unique ID for API to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization A Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/api"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/buildingblocks/": {
+      "get": {
+        "summary": "retrieve organization building blocks",
+        "description": "Returns the building blocks for an organization",
+        "operationId": "getOrganizationBuildingBlocks",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tags Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/buildingblock"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add building block to organization",
+        "description": "add building block for organization",
+        "operationId": "addOrganizationBuildingBlock",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "building_block_id",
+            "in": "query",
+            "description": "building block unique id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Building Block Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/buildingblock"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/buildingblocks/{building_block_id}": {
+      "delete": {
+        "summary": "delete a organization building block",
+        "description": "deletes a building block applied to organization",
+        "operationId": "deleteorganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "building_block_id",
+            "in": "path",
+            "description": "building block to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Building Block Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/images/": {
+      "get": {
+        "summary": "retrieve organization images",
+        "description": "Returns the images for an organization",
+        "operationId": "getOrganizationImages",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Images Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add image to organization",
+        "description": "add image for organization",
+        "operationId": "addOrganizationImage",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "image path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Image Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/images/{image_id}": {
+      "delete": {
+        "summary": "delete a organization image",
+        "description": "deletes a image applied to organization",
+        "operationId": "deleteOrganizationImage",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "id for the image to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Image Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/locations/": {
+      "get": {
+        "summary": "retrieve organization locations",
+        "description": "Returns the locations for an organization",
+        "operationId": "getOrganizationLocations",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Locations Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/location"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add location to organization",
+        "description": "add location for organization",
+        "operationId": "addOrganizationLocation",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "description": "location name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Location Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/location"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/locations/{location_id}": {
+      "delete": {
+        "summary": "delete a organization tag",
+        "description": "deletes a tag applied to organization",
+        "operationId": "deleteorganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "path",
+            "description": "id of location to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tag Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/log/": {
+      "get": {
+        "summary": "retrieve organization tags",
+        "description": "Returns the tags for an organization",
+        "operationId": "getorganizationTags",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Log Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/log"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add log to organization",
+        "description": "add tag for organization",
+        "operationId": "addOrganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "log",
+            "in": "query",
+            "description": "log entry",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Log Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/log"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Log"
+        ]
+      }
+    },
+    "/organization/{organization_id}/log/{log_id}": {
+      "delete": {
+        "summary": "delete a organization log",
+        "description": "deletes a log applied to organization",
+        "operationId": "deleteOrganizationLog",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "log",
+            "in": "path",
+            "description": "log to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Log Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/log"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Log"
+        ]
+      }
+    },
+    "/organization/{organization_id}/screenshots/": {
+      "get": {
+        "summary": "retrieve organization screenshots",
+        "description": "Returns the screenshots for an organization",
+        "operationId": "getOrganizationScreenshots",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Screenshot Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/screenshot"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Screenshots"
+        ]
+      },
+      "post": {
+        "summary": "add screenshots to organization",
+        "description": "add screenshots for organization",
+        "operationId": "addOrganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "screenshots",
+            "in": "query",
+            "description": "screenshot",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Screenshot Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/screenshot"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Screenshot"
+        ]
+      }
+    },
+    "/organization/{organization_id}/screenshots/{screenshot_id}": {
+      "delete": {
+        "summary": "delete a organization screenshot",
+        "description": "deletes a screenshot applied to organization",
+        "operationId": "deleteOrganizationScreenshot",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "screenshot_id",
+            "in": "path",
+            "description": "id of the screenshot to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tag Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/screenshot"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Screenshot"
+        ]
+      }
+    },
+    "/organization/{organization_id}/url/": {
+      "get": {
+        "summary": "retrieve organization url",
+        "description": "Returns the tags for an organization",
+        "operationId": "getorganizationTags",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization URL Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/url"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      },
+      "post": {
+        "summary": "add tag to organization",
+        "description": "add tag for organization",
+        "operationId": "addOrganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "the url",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "a name for the url",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization URL Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/url"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tags"
+        ]
+      }
+    },
+    "/organization/{organization_id}/url/{url_id}": {
+      "delete": {
+        "summary": "delete a organization url",
+        "description": "deletes a tag applied to organization",
+        "operationId": "deleteorganizationTag",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "url_id",
+            "in": "path",
+            "description": "id for the url",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization URL Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/url"
+              }
+            }
+          }
+        },
+        "tags": [
+          "URL"
         ]
       }
     }
@@ -218,41 +1790,229 @@
   "definitions": {
     "organization": {
       "properties": {
+        "organization_id": {
+          "description": "unique id of the organization",
+          "type": "integer",
+          "format": "id"
+        },
         "name": {
           "description": "name of the organization",
-          "type": "string",
-          "format": "label"
+          "type": "string"
         },
-        "description": {
-          "description": "description of the organization",
+        "details": {
+          "description": "details for the organization",
+          "type": "string"
+        },
+        "summary": {
+          "description": "summary of the organization",
+          "type": "string"
+        },
+        "post_date": {
+          "description": "date the organization was posted",
           "type": "string"
         },
         "url": {
-          "description": "url for the organization",
+          "description": "primary URL for the organization",
           "type": "string"
         },
-        "tags": {
-          "description": "tags for the organization",
+        "phone": {
+          "description": "primary phone for the organization",
           "type": "string"
         },
-        "slug": {
-          "description": "slug for the organization",
-          "type": "string",
-          "format": "id"
+        "email": {
+          "description": "primary email for the organization",
+          "type": "string"
+        },
+        "address": {
+          "description": "primary address for the organizaiton",
+          "type": "string"
+        },
+        "city": {
+          "description": "primary city for the organizaiton",
+          "type": "string"
+        },
+        "state": {
+          "description": "primary state for the organizaiton",
+          "type": "string"
+        },
+        "postal_code": {
+          "description": "primary postal code for the organizaiton",
+          "type": "string"
+        },
+        "country": {
+          "description": "primary country for the organizaiton",
+          "type": "string"
+        },
+        "rank": {
+          "description": "rank for the organizaiton",
+          "type": "string"
+        },
+        "location": {
+          "description": "primary location for the organizaiton",
+          "type": "string"
+        },
+        "photo": {
+          "description": "primary photo for the organizaiton",
+          "type": "string"
         }
       }
     },
-    "errorModel": {
-      "required": [
-        "code",
-        "message"
-      ],
+    "tag": {
       "properties": {
-        "code": {
+        "tag_id": {
+          "description": "id for the tag",
           "type": "integer",
-          "format": "int32"
+          "format": "id"
         },
-        "message": {
+        "tag": {
+          "description": "text tag",
+          "type": "string"
+        },
+        "api_count": {
+          "description": "number of items api with tag",
+          "type": "integer"
+        }
+      }
+    },
+    "note": {
+      "properties": {
+        "note_id": {
+          "description": "id for the api item",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "type of note",
+          "type": "string"
+        },
+        "note": {
+          "description": "text of note",
+          "type": "string"
+        }
+      }
+    },
+    "url": {
+      "properties": {
+        "note_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "the type of url",
+          "type": "string"
+        },
+        "url": {
+          "description": "url for the url",
+          "type": "string"
+        },
+        "name": {
+          "description": "name of the url",
+          "type": "string"
+        }
+      }
+    },
+    "image": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "image_id": {
+          "description": "id for the image",
+          "type": "integer",
+          "format": "id"
+        },
+        "name": {
+          "description": "name of the image",
+          "type": "string"
+        },
+        "path": {
+          "description": "path of the image",
+          "type": "string"
+        },
+        "type": {
+          "description": "type of image",
+          "type": "string"
+        }
+      }
+    },
+    "screenshot": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "screenshot_id": {
+          "description": "id for the screenshot",
+          "type": "integer",
+          "format": "id"
+        },
+        "name": {
+          "description": "name of the screenshot",
+          "type": "string"
+        },
+        "path": {
+          "description": "path of the screenshot",
+          "type": "string"
+        },
+        "type": {
+          "description": "type of screenshot",
+          "type": "string"
+        }
+      }
+    },
+    "buildingblock": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "building_block_api": {
+          "description": "id for the building block",
+          "type": "integer",
+          "format": "id"
+        },
+        "organization_id": {
+          "description": "id for the organization",
+          "type": "integer",
+          "format": "id"
+        },
+        "tool_id": {
+          "description": "id for the tool",
+          "type": "integer",
+          "format": "id"
+        },
+        "url": {
+          "description": "url of the building block",
+          "type": "string"
+        }
+      }
+    },
+    "log": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "type of log",
+          "type": "string"
+        },
+        "note": {
+          "description": "text of note",
+          "type": "string"
+        },
+        "details": {
+          "description": "details of log",
+          "type": "string"
+        },
+        "log_date": {
+          "description": "log date",
           "type": "string"
         }
       }
