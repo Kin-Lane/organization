@@ -55,7 +55,7 @@
           }
         },
         "tags": [
-          "Organization"
+          "Organizations"
         ]
       },
       "post": {
@@ -203,7 +203,7 @@
           }
         },
         "tags": [
-          "Organization"
+          "Organizations"
         ]
       }
     },
@@ -248,7 +248,7 @@
           }
         },
         "tags": [
-          "Organization"
+          "Organizations"
         ]
       },
       "put": {
@@ -404,7 +404,7 @@
           }
         },
         "tags": [
-          "Organization"
+          "Organizations"
         ]
       },
       "delete": {
@@ -447,7 +447,7 @@
           }
         },
         "tags": [
-          "Organization"
+          "Organizations"
         ]
       }
     },
@@ -791,7 +791,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "APIs"
         ]
       },
       "post": {
@@ -841,7 +841,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "APIs"
         ]
       }
     },
@@ -892,7 +892,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "APIs"
         ]
       }
     },
@@ -937,7 +937,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Building Blocks"
         ]
       },
       "post": {
@@ -987,7 +987,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Building Blocks"
         ]
       }
     },
@@ -1038,7 +1038,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Building Blocks"
         ]
       }
     },
@@ -1083,7 +1083,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Images"
         ]
       },
       "post": {
@@ -1133,7 +1133,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Images"
         ]
       }
     },
@@ -1184,7 +1184,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Images"
         ]
       }
     },
@@ -1229,7 +1229,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Locations"
         ]
       },
       "post": {
@@ -1279,7 +1279,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Locations"
         ]
       }
     },
@@ -1330,7 +1330,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Locations"
         ]
       }
     },
@@ -1375,7 +1375,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "Logs"
         ]
       },
       "post": {
@@ -1406,9 +1406,23 @@
             "type": "string"
           },
           {
-            "name": "log",
+            "name": "type",
             "in": "query",
-            "description": "log entry",
+            "description": "type of log entry",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "details",
+            "in": "query",
+            "description": "log details",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "log_date",
+            "in": "query",
+            "description": "date of the log entry",
             "required": true,
             "type": "string"
           }
@@ -1425,7 +1439,7 @@
           }
         },
         "tags": [
-          "Log"
+          "Logs"
         ]
       }
     },
@@ -1457,9 +1471,9 @@
             "type": "string"
           },
           {
-            "name": "log",
+            "name": "log_id",
             "in": "path",
-            "description": "log to remove from organization",
+            "description": "id for the log",
             "required": true,
             "type": "string"
           }
@@ -1476,7 +1490,7 @@
           }
         },
         "tags": [
-          "Log"
+          "Logs"
         ]
       }
     },
@@ -1571,7 +1585,7 @@
           }
         },
         "tags": [
-          "Screenshot"
+          "Screenshots"
         ]
       }
     },
@@ -1622,7 +1636,7 @@
           }
         },
         "tags": [
-          "Screenshot"
+          "Screenshots"
         ]
       }
     },
@@ -1667,7 +1681,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "URLs"
         ]
       },
       "post": {
@@ -1731,7 +1745,7 @@
           }
         },
         "tags": [
-          "Tags"
+          "URLs"
         ]
       }
     },
@@ -1782,7 +1796,7 @@
           }
         },
         "tags": [
-          "URL"
+          "URLs"
         ]
       }
     }
