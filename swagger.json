@@ -959,7 +959,7 @@
             "description": "url for the building block",
             "required": false,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -1025,6 +1025,160 @@
         },
         "tags": [
           "Building Blocks"
+        ]
+      }
+    },
+    "/organization/{organization_id}/tools/": {
+      "get": {
+        "summary": "retrieve organization tools",
+        "description": "Returns the tols for an organization",
+        "operationId": "getOrganizationTools",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tool Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tool"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tools"
+        ]
+      },
+      "post": {
+        "summary": "add tool to organization",
+        "description": "add tool for organization",
+        "operationId": "addOrganizationTool",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "formData",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "formData",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tool_id",
+            "in": "formData",
+            "description": "the unique tool id",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url for the tool",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tool Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tool"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tools"
+        ]
+      }
+    },
+    "/organization/{organization_id}/tools/{tool_id}": {
+      "delete": {
+        "summary": "delete a organization tool",
+        "description": "deletes a tool applied to organization",
+        "operationId": "getOrganizationToo",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the organization",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tool_id",
+            "in": "path",
+            "description": "tool to remove from organization",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization Tool Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tool"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tools"
         ]
       }
     },
@@ -1321,7 +1475,7 @@
             "description": "location longitude",
             "required": false,
             "type": "string"
-          } 
+          }
         ],
         "responses": {
           "200": {
@@ -2170,6 +2324,31 @@
         }
       }
     },
+    "tool": {
+      "properties": {
+        "tool_id": {
+          "description": "id for the tool",
+          "type": "integer",
+          "format": "id"
+        },
+        "name": {
+          "description": "name of tool",
+          "type": "string"
+        },
+        "details": {
+          "description": "details of the tool",
+          "type": "string"
+        },
+        "post_date": {
+          "description": "date tool was posted",
+          "type": "string"
+        },
+        "url": {
+          "description": "primary url for tool",
+          "type": "string"
+        }
+      }
+    },    
     "locations": {
       "properties": {
         "location_id": {
