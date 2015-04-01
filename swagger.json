@@ -1474,13 +1474,6 @@
             "description": "log details",
             "required": false,
             "type": "string"
-          },
-          {
-            "name": "log_date",
-            "in": "formData",
-            "description": "date of the log entry",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
