@@ -81,7 +81,7 @@
             "name": "name",
             "in": "formData",
             "description": "name of organization",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
@@ -480,21 +480,21 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "tag",
-            "in": "query",
+            "in": "formData",
             "description": "tag name",
             "required": true,
             "type": "string"
@@ -626,28 +626,28 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "type",
-            "in": "query",
+            "in": "formData",
             "description": "type of the note",
             "required": true,
             "type": "string"
           },
           {
             "name": "note",
-            "in": "query",
+            "in": "formData",
             "description": "the full text of note",
             "required": true,
             "type": "string"
@@ -779,21 +779,21 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "api_id",
-            "in": "query",
+            "in": "formData",
             "description": "API unique ID",
             "required": true,
             "type": "string"
@@ -925,25 +925,41 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "building_block_id",
-            "in": "query",
+            "in": "formData",
             "description": "building block unique id",
             "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "tools_id",
+            "in": "formData",
+            "description": "tool id for the building block",
+            "required": false,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url for the building block",
+            "required": false,
             "type": "string"
-          }
+          }          
         ],
         "responses": {
           "200": {
@@ -1071,22 +1087,36 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "path",
-            "in": "query",
+            "in": "formData",
             "description": "image path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "image type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "image name",
             "required": true,
             "type": "string"
           }
@@ -1217,25 +1247,81 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
-            "name": "location",
-            "in": "query",
-            "description": "location name",
+            "name": "description",
+            "in": "formData",
+            "description": "location description",
             "required": true,
             "type": "string"
-          }
+          },
+          {
+            "name": "address1",
+            "in": "formData",
+            "description": "location address 1",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "address2",
+            "in": "formData",
+            "description": "location address 2",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "in": "formData",
+            "description": "location city",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "state_code",
+            "in": "formData",
+            "description": "location state code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "zip_code",
+            "in": "formData",
+            "description": "location zip code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "country_code",
+            "in": "formData",
+            "description": "location country code",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "location latitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "location longitude",
+            "required": false,
+            "type": "string"
+          } 
         ],
         "responses": {
           "200": {
@@ -1363,35 +1449,35 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "type",
-            "in": "query",
+            "in": "formData",
             "description": "type of log entry",
             "required": false,
             "type": "string"
           },
           {
             "name": "details",
-            "in": "query",
+            "in": "formData",
             "description": "log details",
             "required": false,
             "type": "string"
           },
           {
             "name": "log_date",
-            "in": "query",
+            "in": "formData",
             "description": "date of the log entry",
             "required": true,
             "type": "string"
@@ -1523,21 +1609,21 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "screenshots",
-            "in": "query",
+            "in": "formData",
             "description": "screenshot",
             "required": true,
             "type": "string"
@@ -1669,35 +1755,35 @@
           },
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "type",
-            "in": "query",
+            "in": "formData",
             "description": "type of url",
             "required": true,
             "type": "string"
           },
           {
             "name": "url",
-            "in": "query",
+            "in": "formData",
             "description": "the url",
             "required": true,
             "type": "string"
           },
           {
             "name": "name",
-            "in": "query",
+            "in": "formData",
             "description": "a name for the url",
             "required": true,
             "type": "string"
