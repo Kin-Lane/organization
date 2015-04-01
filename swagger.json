@@ -65,63 +65,63 @@
         "parameters": [
           {
             "name": "appid",
-            "in": "query",
+            "in": "formData",
             "description": "your appid for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "query",
+            "in": "formData",
             "description": "your appkey for accessing the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "name",
-            "in": "query",
+            "in": "formData",
             "description": "name of organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "details",
-            "in": "query",
+            "in": "formData",
             "description": "details for the organization",
             "required": false,
             "type": "string"
           },
           {
             "name": "summary",
-            "in": "query",
+            "in": "formData",
             "description": "sumary of the organization",
             "required": false,
             "type": "string"
           },
           {
             "name": "url",
-            "in": "query",
+            "in": "formData",
             "description": "unique url for the organization",
             "required": true,
             "type": "string"
           },
           {
             "name": "phone",
-            "in": "query",
+            "in": "formData",
             "description": "phone for the organization",
             "required": false,
             "type": "string"
           },
           {
             "name": "email",
-            "in": "query",
+            "in": "formData",
             "description": "email for the organization",
             "required": false,
             "type": "string"
           },
           {
             "name": "address",
-            "in": "query",
+            "in": "formData",
             "description": "primary address of the organization",
             "required": false,
             "type": "integer",
@@ -129,7 +129,7 @@
           },
           {
             "name": "city",
-            "in": "query",
+            "in": "formData",
             "description": "primary city of the organization",
             "required": false,
             "type": "integer",
@@ -137,7 +137,7 @@
           },
           {
             "name": "state",
-            "in": "query",
+            "in": "formData",
             "description": "primary state of the organization",
             "required": false,
             "type": "integer",
@@ -145,7 +145,7 @@
           },
           {
             "name": "postal_code",
-            "in": "query",
+            "in": "formData",
             "description": "primary postal code of the organization",
             "required": false,
             "type": "integer",
@@ -153,7 +153,7 @@
           },
           {
             "name": "country",
-            "in": "query",
+            "in": "formData",
             "description": "primary country of the organization",
             "required": false,
             "type": "integer",
@@ -161,7 +161,7 @@
           },
           {
             "name": "rank",
-            "in": "query",
+            "in": "formData",
             "description": "ranking for the organization",
             "required": false,
             "type": "integer",
@@ -169,7 +169,7 @@
           },
           {
             "name": "location",
-            "in": "query",
+            "in": "formData",
             "description": "primary location of the organization",
             "required": false,
             "type": "integer",
@@ -177,7 +177,7 @@
           },
           {
             "name": "photo",
-            "in": "query",
+            "in": "formData",
             "description": "primary photo of the organization",
             "required": false,
             "type": "integer",
