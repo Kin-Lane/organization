@@ -99,13 +99,6 @@
             "type": "string"
           },
           {
-            "name": "post_date",
-            "in": "query",
-            "description": "date the organization was added",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "url",
             "in": "query",
             "description": "unique url for the organization",
