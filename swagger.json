@@ -1703,7 +1703,7 @@
         ]
       }
     },
-    "/organization/{organization_id}/url/": {
+    "/organization/{organization_id}/urls/": {
       "get": {
         "summary": "retrieve organization url",
         "description": "Returns the tags for an organization",
@@ -1812,7 +1812,7 @@
         ]
       }
     },
-    "/organization/{organization_id}/url/{url_id}": {
+    "/organization/{organization_id}/urls/{url_id}": {
       "delete": {
         "summary": "delete a organization url",
         "description": "deletes a tag applied to organization",
