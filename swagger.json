@@ -1390,11 +1390,11 @@
         ]
       }
     },
-    "/organization/{organization_id}/log/": {
+    "/organization/{organization_id}/logs/": {
       "get": {
-        "summary": "retrieve organization tags",
-        "description": "Returns the tags for an organization",
-        "operationId": "getorganizationTags",
+        "summary": "retrieve organization logs",
+        "description": "Returns the logs for an organization",
+        "operationId": "getOrganizationLogs",
         "parameters": [
           {
             "name": "organization_id",
@@ -1499,7 +1499,7 @@
         ]
       }
     },
-    "/organization/{organization_id}/log/{log_id}": {
+    "/organization/{organization_id}/logs/{log_id}": {
       "delete": {
         "summary": "delete a organization log",
         "description": "deletes a log applied to organization",
