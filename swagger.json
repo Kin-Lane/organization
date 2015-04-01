@@ -1465,14 +1465,14 @@
             "name": "type",
             "in": "formData",
             "description": "type of log entry",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "name": "details",
             "in": "formData",
             "description": "log details",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -1615,9 +1615,23 @@
             "type": "string"
           },
           {
-            "name": "screenshots",
+            "name": "path",
             "in": "formData",
-            "description": "screenshot",
+            "description": "image path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "image type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "image name",
             "required": true,
             "type": "string"
           }
