@@ -17,7 +17,7 @@
   "paths": {
     "/organization/": {
       "get": {
-        "summary": "retrieves all organizations",
+        "summary": "get organizations",
         "description": "retrieves all organizations, with filter by keyword",
         "operationId": "getOrganizations",
         "parameters": [
@@ -59,7 +59,7 @@
         ]
       },
       "post": {
-        "summary": "add a new organization",
+        "summary": "add new organization",
         "description": "Adds a new organization",
         "operationId": "addOrganization",
         "parameters": [
@@ -209,7 +209,7 @@
     },
     "/organization/{organization_id}/": {
       "get": {
-        "summary": "Retrieve a organization using its unique id",
+        "summary": "get organization",
         "description": "Returns the an organization",
         "operationId": "getOrganization",
         "parameters": [
