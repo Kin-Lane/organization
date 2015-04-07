@@ -18,7 +18,7 @@
     "/organization/": {
       "get": {
         "summary": "get organizations",
-        "description": "retrieves all organizations, with filter by keyword",
+        "description": "get organizations",
         "operationId": "getOrganizations",
         "parameters": [
           {
@@ -60,7 +60,7 @@
       },
       "post": {
         "summary": "add new organization",
-        "description": "Adds a new organization",
+        "description": "add new organization",
         "operationId": "addOrganization",
         "parameters": [
           {
@@ -195,7 +195,7 @@
     "/organization/{organization_id}/": {
       "get": {
         "summary": "get organization",
-        "description": "Returns the an organization",
+        "description": "get organization",
         "operationId": "getOrganization",
         "parameters": [
           {
@@ -238,7 +238,7 @@
       },
       "put": {
         "summary": "update organization",
-        "description": "Update Organization",
+        "description": "update organization",
         "operationId": "updateOrganization",
         "parameters": [
           {
@@ -379,7 +379,7 @@
       },
       "delete": {
         "summary": "delete organization",
-        "description": "Deletes An Organization",
+        "description": "delete organization",
         "operationId": "deleteOrganization",
         "parameters": [
           {
@@ -424,8 +424,8 @@
     "/organization/{organization_id}/tags/": {
       "get": {
         "summary": "retrieve organization tags",
-        "description": "Returns the tags for an organization",
-        "operationId": "getorganizationTags",
+        "description": "retrieve organization tags",
+        "operationId": "getOrganizationTags",
         "parameters": [
           {
             "name": "organization_id",
@@ -520,7 +520,7 @@
       "delete": {
         "summary": "delete a organization tag",
         "description": "deletes a tag applied to organization",
-        "operationId": "deleteorganizationTag",
+        "operationId": "deleteOrganizationTag",
         "parameters": [
           {
             "name": "organization_id",
@@ -571,7 +571,7 @@
       "get": {
         "summary": "retrieve an APIs notes",
         "description": "Returns the notes for an API",
-        "operationId": "getAPINotes",
+        "operationId": "getOrganizationNotes",
         "parameters": [
           {
             "name": "organization_id",
@@ -673,7 +673,7 @@
       "delete": {
         "summary": "delete an organization note",
         "description": "Deletes a note for a organization",
-        "operationId": "deleteAPINote",
+        "operationId": "deleteOrganizationNote",
         "parameters": [
           {
             "name": "organization_id",
@@ -766,8 +766,8 @@
       },
       "post": {
         "summary": "add API to organization",
-        "description": "add tag for organization",
-        "operationId": "addOrganizationTag",
+        "description": "add API for organization",
+        "operationId": "addOrganizationAPI",
         "parameters": [
           {
             "name": "organization_id",
@@ -869,7 +869,7 @@
     "/organization/{organization_id}/buildingblocks/": {
       "get": {
         "summary": "retrieve organization building blocks",
-        "description": "Returns the building blocks for an organization",
+        "description": "retrieve organization building blocks",
         "operationId": "getOrganizationBuildingBlocks",
         "parameters": [
           {
@@ -980,8 +980,8 @@
     "/organization/{organization_id}/buildingblocks/{building_block_id}": {
       "delete": {
         "summary": "delete a organization building block",
-        "description": "deletes a building block applied to organization",
-        "operationId": "deleteorganizationTag",
+        "description": "delete a organization building block",
+        "operationId": "deleteOrganizationBuildingBlock",
         "parameters": [
           {
             "name": "organization_id",
@@ -1135,7 +1135,7 @@
       "delete": {
         "summary": "delete a organization tool",
         "description": "deletes a tool applied to organization",
-        "operationId": "getOrganizationToo",
+        "operationId": "getOrganizationTool",
         "parameters": [
           {
             "name": "organization_id",
@@ -1496,8 +1496,8 @@
     "/organization/{organization_id}/locations/{location_id}": {
       "delete": {
         "summary": "delete a organization tag",
-        "description": "deletes a tag applied to organization",
-        "operationId": "deleteorganizationTag",
+        "description": "delete a organization tag",
+        "operationId": "deleteorganizationLocation",
         "parameters": [
           {
             "name": "organization_id",
@@ -1547,7 +1547,7 @@
     "/organization/{organization_id}/logs/": {
       "get": {
         "summary": "retrieve organization logs",
-        "description": "Returns the logs for an organization",
+        "description": "retrieve organization logs",
         "operationId": "getOrganizationLogs",
         "parameters": [
           {
@@ -1590,8 +1590,8 @@
       },
       "post": {
         "summary": "add log to organization",
-        "description": "add tag for organization",
-        "operationId": "addOrganizationTag",
+        "description": "add log to organization",
+        "operationId": "addOrganizationLog",
         "parameters": [
           {
             "name": "organization_id",
@@ -1649,7 +1649,7 @@
     "/organization/{organization_id}/logs/{log_id}": {
       "delete": {
         "summary": "delete a organization log",
-        "description": "deletes a log applied to organization",
+        "description": "delete a organization log",
         "operationId": "deleteOrganizationLog",
         "parameters": [
           {
@@ -1700,7 +1700,7 @@
     "/organization/{organization_id}/screenshots/": {
       "get": {
         "summary": "retrieve organization screenshots",
-        "description": "Returns the screenshots for an organization",
+        "description": "retrieve organization screenshots",
         "operationId": "getOrganizationScreenshots",
         "parameters": [
           {
@@ -1744,7 +1744,7 @@
       "post": {
         "summary": "add screenshots to organization",
         "description": "add screenshots for organization",
-        "operationId": "addOrganizationTag",
+        "operationId": "addOrganizationScreenshot",
         "parameters": [
           {
             "name": "organization_id",
@@ -1809,7 +1809,7 @@
     "/organization/{organization_id}/screenshots/{screenshot_id}": {
       "delete": {
         "summary": "delete a organization screenshot",
-        "description": "deletes a screenshot applied to organization",
+        "description": "delete a organization screenshot",
         "operationId": "deleteOrganizationScreenshot",
         "parameters": [
           {
@@ -1860,8 +1860,8 @@
     "/organization/{organization_id}/urls/": {
       "get": {
         "summary": "retrieve organization url",
-        "description": "Returns the tags for an organization",
-        "operationId": "getorganizationTags",
+        "description": "retrieve organization url",
+        "operationId": "getOrganizationURLs",
         "parameters": [
           {
             "name": "organization_id",
@@ -1902,9 +1902,9 @@
         ]
       },
       "post": {
-        "summary": "add tag to organization",
-        "description": "add tag for organization",
-        "operationId": "addOrganizationTag",
+        "summary": "add URL to organization",
+        "description": "add URL for organization",
+        "operationId": "addOrganizationURL",
         "parameters": [
           {
             "name": "organization_id",
@@ -1969,8 +1969,8 @@
     "/organization/{organization_id}/urls/{url_id}": {
       "delete": {
         "summary": "delete a organization url",
-        "description": "deletes a tag applied to organization",
-        "operationId": "deleteorganizationTag",
+        "description": "delete a organization url",
+        "operationId": "deleteOrganizationURL",
         "parameters": [
           {
             "name": "organization_id",
