@@ -1,1477 +1,1528 @@
 {
-	"apiVersion": "1.0.0",
-	"swaggerVersion": "1.2",
-	"basePath": "organization.api.kinlane.com",
-	"resourcePath": "/",
-	"produces": ["application/json"],
-	"consumes": ["application/json"],
-	"apis": [{
-		"path": "/organization/",
-		"operations": [{
-			"method": "get",
-			"summary": "get organizations",
-			"notes": "get organizations",
-			"nickname": "getOrganizations",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "query",
-				"description": "a text query to search across organizations"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "post",
-			"summary": "add new organization",
-			"notes": "add new organization",
-			"nickname": "addOrganization",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "address",
-				"description": "primary address of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "city",
-				"description": "primary city of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "country",
-				"description": "primary country of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "details",
-				"description": "details for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "email",
-				"description": "email for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "location",
-				"description": "primary location of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "name",
-				"description": "name of organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "phone",
-				"description": "phone for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "photo",
-				"description": "primary photo of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "postal_code",
-				"description": "primary postal code of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "rank",
-				"description": "ranking for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "state",
-				"description": "primary state of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "summary",
-				"description": "sumary of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "url",
-				"description": "unique url for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete organization",
-			"notes": "delete organization",
-			"nickname": "deleteOrganization",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "the unique id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/",
-		"operations": [{
-			"method": "get",
-			"summary": "get organization",
-			"notes": "get organization",
-			"nickname": "getOrganization",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "the unique id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "put",
-			"summary": "update organization",
-			"notes": "update organization",
-			"nickname": "updateOrganization",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "address",
-				"description": "primary address of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "city",
-				"description": "primary city of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "country",
-				"description": "primary country of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "details",
-				"description": "details for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "email",
-				"description": "email for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "location",
-				"description": "primary location of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "name",
-				"description": "name of organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "the unique id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "phone",
-				"description": "phone for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "photo",
-				"description": "primary photo of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "postal_code",
-				"description": "primary postal code of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "rank",
-				"description": "ranking for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "state",
-				"description": "primary state of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "summary",
-				"description": "sumary of the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "url",
-				"description": "unique url for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "get",
-			"summary": "retrieve organization APIs",
-			"notes": "Returns the APIs for an organization",
-			"nickname": "getAPIsForOrganization",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/apis/",
-		"operations": [{
-			"method": "post",
-			"summary": "add API to organization",
-			"notes": "add API for organization",
-			"nickname": "addOrganizationAPI",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "api_id",
-				"description": "API unique ID"
-			},
-			{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization API",
-			"notes": "deletes a API applied to organization",
-			"nickname": "deleteOrganizationAPI",
-			"parameters": [{
-				"paramType": "path",
-				"name": "api_id",
-				"description": "unique ID for API to remove from organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/apis/{api_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization building blocks",
-			"notes": "retrieve organization building blocks",
-			"nickname": "getOrganizationBuildingBlocks",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/buildingblocks/",
-		"operations": [{
-			"method": "post",
-			"summary": "add building block to organization",
-			"notes": "add building block for organization",
-			"nickname": "addOrganizationBuildingBlock",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "building_block_id",
-				"description": "building block unique id"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "tools_id",
-				"description": "tool id for the building block"
-			},
-			{
-				"paramType": "formData",
-				"name": "url",
-				"description": "url for the building block"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization building block",
-			"notes": "delete a organization building block",
-			"nickname": "deleteOrganizationBuildingBlock",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "building_block_id",
-				"description": "building block to remove from organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/buildingblocks/{building_block_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization images",
-			"notes": "Returns the images for an organization",
-			"nickname": "getOrganizationImages",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/images/",
-		"operations": [{
-			"method": "post",
-			"summary": "add image to organization",
-			"notes": "add image for organization",
-			"nickname": "addOrganizationImage",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "name",
-				"description": "image name"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "path",
-				"description": "image path"
-			},
-			{
-				"paramType": "formData",
-				"name": "type",
-				"description": "image type"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization image",
-			"notes": "deletes a image applied to organization",
-			"nickname": "deleteOrganizationImage",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "image_id",
-				"description": "id for the image to remove from organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/images/{image_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization locations",
-			"notes": "Returns the locations for an organization",
-			"nickname": "getOrganizationLocations",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/locations/",
-		"operations": [{
-			"method": "post",
-			"summary": "add location to organization",
-			"notes": "add location for organization",
-			"nickname": "addOrganizationLocation",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "address1",
-				"description": "location address 1"
-			},
-			{
-				"paramType": "formData",
-				"name": "address2",
-				"description": "location address 2"
-			},
-			{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "city",
-				"description": "location city"
-			},
-			{
-				"paramType": "formData",
-				"name": "country_code",
-				"description": "location country code"
-			},
-			{
-				"paramType": "formData",
-				"name": "description",
-				"description": "location description"
-			},
-			{
-				"paramType": "formData",
-				"name": "latitude",
-				"description": "location latitude"
-			},
-			{
-				"paramType": "formData",
-				"name": "longitude",
-				"description": "location longitude"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "state_code",
-				"description": "location state code"
-			},
-			{
-				"paramType": "formData",
-				"name": "zip_code",
-				"description": "location zip code"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization tag",
-			"notes": "delete a organization tag",
-			"nickname": "deleteorganizationLocation",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "location_id",
-				"description": "id of location to remove from organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/locations/{location_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization logs",
-			"notes": "retrieve organization logs",
-			"nickname": "getOrganizationLogs",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/logs/",
-		"operations": [{
-			"method": "post",
-			"summary": "add log to organization",
-			"notes": "add log to organization",
-			"nickname": "addOrganizationLog",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "details",
-				"description": "log details"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "type",
-				"description": "type of log entry"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization log",
-			"notes": "delete a organization log",
-			"nickname": "deleteOrganizationLog",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "log_id",
-				"description": "id for the log"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/logs/{log_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve an APIs notes",
-			"notes": "Returns the notes for an API",
-			"nickname": "getOrganizationNotes",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the API"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the API"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the API"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/notes/",
-		"operations": [{
-			"method": "post",
-			"summary": "add an Organization note",
-			"notes": "Add a note for the organization",
-			"nickname": "addOrganizationNote",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the API"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the API"
-			},
-			{
-				"paramType": "formData",
-				"name": "note",
-				"description": "the full text of note"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the api item"
-			},
-			{
-				"paramType": "formData",
-				"name": "type",
-				"description": "type of the note"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete an organization note",
-			"notes": "Deletes a note for a organization",
-			"nickname": "deleteOrganizationNote",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the API"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the API"
-			},
-			{
-				"paramType": "path",
-				"name": "note_id",
-				"description": "id for the note"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the API"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/notes/{note_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization screenshots",
-			"notes": "retrieve organization screenshots",
-			"nickname": "getOrganizationScreenshots",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/screenshots/",
-		"operations": [{
-			"method": "post",
-			"summary": "add screenshots to organization",
-			"notes": "add screenshots for organization",
-			"nickname": "addOrganizationScreenshot",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "name",
-				"description": "image name"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "path",
-				"description": "image path"
-			},
-			{
-				"paramType": "formData",
-				"name": "type",
-				"description": "image type"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization screenshot",
-			"notes": "delete a organization screenshot",
-			"nickname": "deleteOrganizationScreenshot",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "screenshot_id",
-				"description": "id of the screenshot to remove from organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/screenshots/{screenshot_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization tags",
-			"notes": "retrieve organization tags",
-			"nickname": "getOrganizationTags",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/tags/",
-		"operations": [{
-			"method": "post",
-			"summary": "add tag to organization",
-			"notes": "add tag for organization",
-			"nickname": "addOrganizationTag",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "tag",
-				"description": "tag name"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization tag",
-			"notes": "deletes a tag applied to organization",
-			"nickname": "deleteOrganizationTag",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "tag",
-				"description": "tag to remove from organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/tags/{tag}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization tools",
-			"notes": "Returns the tols for an organization",
-			"nickname": "getOrganizationTools",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/tools/",
-		"operations": [{
-			"method": "post",
-			"summary": "add tool to organization",
-			"notes": "add tool for organization",
-			"nickname": "addOrganizationTool",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "tool_id",
-				"description": "the unique tool id"
-			},
-			{
-				"paramType": "formData",
-				"name": "url",
-				"description": "url for the tool"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization tool",
-			"notes": "deletes a tool applied to organization",
-			"nickname": "getOrganizationTool",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "tool_id",
-				"description": "tool to remove from organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/tools/{tool_id}",
-		"operations": [{
-			"method": "get",
-			"summary": "retrieve organization url",
-			"notes": "retrieve organization url",
-			"nickname": "getOrganizationURLs",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for organization"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	},
-	{
-		"path": "/organization/{organization_id}/urls/",
-		"operations": [{
-			"method": "post",
-			"summary": "add URL to organization",
-			"notes": "add URL for organization",
-			"nickname": "addOrganizationURL",
-			"parameters": [{
-				"paramType": "formData",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "name",
-				"description": "a name for the url"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "formData",
-				"name": "type",
-				"description": "type of url"
-			},
-			{
-				"paramType": "formData",
-				"name": "url",
-				"description": "the url"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		},
-		{
-			"method": "delete",
-			"summary": "delete a organization url",
-			"notes": "delete a organization url",
-			"nickname": "deleteOrganizationURL",
-			"parameters": [{
-				"paramType": "query",
-				"name": "appid",
-				"description": "your appid for accessing the organization"
-			},
-			{
-				"paramType": "query",
-				"name": "appkey",
-				"description": "your appkey for accessing the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "organization_id",
-				"description": "id for the organization"
-			},
-			{
-				"paramType": "path",
-				"name": "url_id",
-				"description": "id for the url"
-			}],
-			"responses": {
-				"code": "200",
-				"message": "OK"
-			}
-		}]
-	}],
-	"models": [{
-		"id": "0",
-		"properties": {
-			"organization_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"name": {
-				"description": "",
-				"type": "delete"
-			},
-			"details": {
-				"description": "",
-				"type": "delete"
-			},
-			"summary": {
-				"description": "",
-				"type": "delete"
-			},
-			"post_date": {
-				"description": "",
-				"type": "delete"
-			},
-			"url": {
-				"description": "",
-				"type": "delete"
-			},
-			"phone": {
-				"description": "",
-				"type": "delete"
-			},
-			"email": {
-				"description": "",
-				"type": "delete"
-			},
-			"address": {
-				"description": "",
-				"type": "delete"
-			},
-			"city": {
-				"description": "",
-				"type": "delete"
-			},
-			"state": {
-				"description": "",
-				"type": "delete"
-			},
-			"postal_code": {
-				"description": "",
-				"type": "delete"
-			},
-			"country": {
-				"description": "",
-				"type": "delete"
-			},
-			"rank": {
-				"description": "",
-				"type": "delete"
-			},
-			"location": {
-				"description": "",
-				"type": "delete"
-			},
-			"photo": {
-				"description": "",
-				"type": "delete"
-			},
-			"api_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"title": {
-				"description": "",
-				"type": "delete"
-			},
-			"link": {
-				"description": "",
-				"type": "delete"
-			},
-			"item_date": {
-				"description": "",
-				"type": "delete"
-			},
-			"status": {
-				"description": "",
-				"type": "delete"
-			},
-			"public_comment": {
-				"description": "",
-				"type": "delete"
-			},
-			"original_date": {
-				"description": "",
-				"type": "delete"
-			},
-			"author": {
-				"description": "",
-				"type": "delete"
-			},
-			"processed": {
-				"description": "",
-				"type": "delete"
-			},
-			"domain": {
-				"description": "",
-				"type": "delete"
-			},
-			"screenshot_url": {
-				"description": "",
-				"type": "delete"
-			},
-			"resolved_url": {
-				"description": "",
-				"type": "delete"
-			},
-			"weekly_summary": {
-				"description": "",
-				"type": "delete"
-			},
-			"weekly_roundup": {
-				"description": "",
-				"type": "delete"
-			},
-			"tag_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"tag": {
-				"description": "",
-				"type": "delete"
-			},
-			"api_count": {
-				"description": "",
-				"type": "delete"
-			},
-			"note_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"type": {
-				"description": "",
-				"type": "delete"
-			},
-			"note": {
-				"description": "",
-				"type": "delete"
-			},
-			"image_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"path": {
-				"description": "",
-				"type": "delete"
-			},
-			"screenshot_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"building_block_api": {
-				"description": "",
-				"type": "delete"
-			},
-			"tool_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"log_date": {
-				"description": "",
-				"type": "delete"
-			},
-			"location_id": {
-				"description": "",
-				"type": "delete"
-			},
-			"description": {
-				"description": "",
-				"type": "delete"
-			},
-			"address1": {
-				"description": "",
-				"type": "delete"
-			},
-			"address2": {
-				"description": "",
-				"type": "delete"
-			},
-			"post_code": {
-				"description": "",
-				"type": "delete"
-			},
-			"latitude": {
-				"description": "",
-				"type": "delete"
-			},
-			"longitude": {
-				"description": "",
-				"type": "delete"
-			}
-		}
-	}]
+  "id": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+  "name": "Organization",
+  "description": "This is an organization for all my organization entries. I use a single organization system to manage all my sites. Based upon tagging, I then publish each post out to its respective Github Page based repo.",
+  "order": [],
+  "folders": [
+    {
+      "id": "1a7170a5-610b-49f1-967a-a1d5f1adbb13",
+      "name": "organization",
+      "description": "Folder for organization",
+      "order": [
+        "ff2c20d7-b646-4d35-887a-85622bb5c7c1",
+        "79c39cc8-d3a2-4710-8fe6-9306c076a909",
+        "f3366d5e-a87c-4e63-a7bf-1e4e10ec43e0",
+        "d03e47c4-7a48-44fe-b97d-57a883af5165",
+        "82f31edd-5363-4352-a8f6-9f1eafc817b9",
+        "c64a4eda-6b7c-4f54-9162-c1dd280f2826",
+        "baee3292-d692-4b87-b020-1238c5a02529",
+        "19d353db-f1ff-4bfa-ad00-30b69641acad",
+        "0c4707da-eb08-49c8-b700-5978d7257b43",
+        "7275f6c1-1a61-44ae-aab5-94aec07389ab",
+        "5ee0e55a-d927-47db-92e6-e3bd5cc8f3e5",
+        "cc6fa774-b20b-4509-932b-3e5e64611f75",
+        "504a3fe7-c0b1-4ab7-ab11-6a3d68d3f991",
+        "9f3fe3df-78ff-426d-9b6c-140c2f17c6c6",
+        "432f6690-8f1f-4326-907c-04869d0e50b8",
+        "85943e37-cbc2-49e3-8a69-7015fc22ac14",
+        "9d54ceef-2118-4364-84a5-e34180161b7d",
+        "ba97ba35-fbe7-4714-89ab-2a960deea407",
+        "1854c849-2184-4a66-b9f0-98a8a930621d",
+        "408d7e9a-b30a-49de-9963-fe3c4abb47e6",
+        "40a9496d-e6d4-482a-8f11-21c90036ee7d",
+        "0c309967-6293-437c-8cae-0aa14f908410",
+        "b902065d-497f-4fa1-ba46-e9ced7cf71ca",
+        "f0567a1b-ae1d-4e62-a93d-7364cf5068b6",
+        "8bb752ec-98a5-4a29-a1d2-9008b26b4519",
+        "f7c201bc-0f24-4115-a2a8-67e9492a237a",
+        "c9c6404d-4bb0-4ad3-a5ee-6ce65f2f7bc4",
+        "ba643e4e-030b-42c8-8d6d-02fe8b1012e8",
+        "87369de9-b456-4e8f-96ee-c9276e6ccb35",
+        "b4df2caa-fe3d-4435-9fcb-297aeffc64c2",
+        "bfa09300-05ed-45a6-ba61-0eb9fe3adc85",
+        "4f4971df-aea2-410d-b8c2-27833cb97008",
+        "73273564-a946-488f-9221-e127be0c0cd0",
+        "de2c20b8-3e4e-4c16-bd10-f0faa8597279",
+        "594f05a0-14ce-4f41-b6f2-7871257b99a3"
+      ],
+      "collection_name": "Organization",
+      "collection_id": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "collection": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "owner": "27278"
+    }
+  ],
+  "timestamp": 1413302258635,
+  "synced": false,
+  "owner": "27278",
+  "sharedWithTeam": false,
+  "subscribed": false,
+  "hasRequests": true,
+  "requests": [
+    {
+      "id": "0c309967-6293-437c-8cae-0aa14f908410",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/images/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "path",
+          "value": "{{path}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "type",
+          "value": "{{type}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "name",
+          "value": "{{name}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add image for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add image to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "0c4707da-eb08-49c8-b700-5978d7257b43",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/notes/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Returns the notes for an API",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve an APIs notes",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "1854c849-2184-4a66-b9f0-98a8a930621d",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tools/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "tool_id",
+          "value": "{{tool_id}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "url",
+          "value": "{{url}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add tool for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add tool to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "19d353db-f1ff-4bfa-ad00-30b69641acad",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tags/{tag}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "deletes a tag applied to organization",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization tag",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "408d7e9a-b30a-49de-9963-fe3c4abb47e6",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tools/{tool_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "deletes a tool applied to organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization tool",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "40a9496d-e6d4-482a-8f11-21c90036ee7d",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/images/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Returns the images for an organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization images",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "432f6690-8f1f-4326-907c-04869d0e50b8",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/buildingblocks/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "retrieve organization building blocks",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization building blocks",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "4f4971df-aea2-410d-b8c2-27833cb97008",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/screenshots/{screenshot_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete a organization screenshot",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization screenshot",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "504a3fe7-c0b1-4ab7-ab11-6a3d68d3f991",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/apis/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "api_id",
+          "value": "{{api_id}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add API for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add API to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "594f05a0-14ce-4f41-b6f2-7871257b99a3",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/urls/{url_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete a organization url",
+      "descriptionFormat": "html",
+      "time": 1428377676618,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization url",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "5ee0e55a-d927-47db-92e6-e3bd5cc8f3e5",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/notes/{note_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Deletes a note for a organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete an organization note",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "7275f6c1-1a61-44ae-aab5-94aec07389ab",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/notes/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "type",
+          "value": "{{type}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "note",
+          "value": "{{note}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Add a note for the organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add an Organization note",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "73273564-a946-488f-9221-e127be0c0cd0",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/urls/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "retrieve organization url",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization url",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "79c39cc8-d3a2-4710-8fe6-9306c076a909",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "name",
+          "value": "{{name}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "details",
+          "value": "{{details}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "summary",
+          "value": "{{summary}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "url",
+          "value": "{{url}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "phone",
+          "value": "{{phone}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "email",
+          "value": "{{email}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "address",
+          "value": "{{address}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "city",
+          "value": "{{city}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "state",
+          "value": "{{state}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "postal_code",
+          "value": "{{postal_code}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "country",
+          "value": "{{country}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "rank",
+          "value": "{{rank}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "location",
+          "value": "{{location}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "photo",
+          "value": "{{photo}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add new organization",
+      "descriptionFormat": "html",
+      "time": 1428377676614,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add new organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "82f31edd-5363-4352-a8f6-9f1eafc817b9",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete organization",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "85943e37-cbc2-49e3-8a69-7015fc22ac14",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/buildingblocks/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "building_block_id",
+          "value": "{{building_block_id}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "tools_id",
+          "value": "{{tools_id}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "url",
+          "value": "{{url}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add building block for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add building block to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "87369de9-b456-4e8f-96ee-c9276e6ccb35",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/logs/{log_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete a organization log",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization log",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "8bb752ec-98a5-4a29-a1d2-9008b26b4519",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/locations/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "description",
+          "value": "{{description}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "address1",
+          "value": "{{address1}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "address2",
+          "value": "{{address2}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "city",
+          "value": "{{city}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "state_code",
+          "value": "{{state_code}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "zip_code",
+          "value": "{{zip_code}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "country_code",
+          "value": "{{country_code}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "latitude",
+          "value": "{{latitude}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "longitude",
+          "value": "{{longitude}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add location for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add location to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "9d54ceef-2118-4364-84a5-e34180161b7d",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/buildingblocks/{building_block_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete a organization building block",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization building block",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "9f3fe3df-78ff-426d-9b6c-140c2f17c6c6",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/apis/{api_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "deletes a API applied to organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization API",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "b4df2caa-fe3d-4435-9fcb-297aeffc64c2",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/screenshots/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "retrieve organization screenshots",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization screenshots",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "b902065d-497f-4fa1-ba46-e9ced7cf71ca",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/images/{image_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "deletes a image applied to organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization image",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "ba643e4e-030b-42c8-8d6d-02fe8b1012e8",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/logs/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "type",
+          "value": "{{type}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "details",
+          "value": "{{details}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add log to organization",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add log to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "ba97ba35-fbe7-4714-89ab-2a960deea407",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tools/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Returns the tols for an organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization tools",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "baee3292-d692-4b87-b020-1238c5a02529",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tags/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "tag",
+          "value": "{{tag}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add tag for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add tag to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "bfa09300-05ed-45a6-ba61-0eb9fe3adc85",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/screenshots/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "path",
+          "value": "{{path}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "type",
+          "value": "{{type}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "name",
+          "value": "{{name}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add screenshots for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add screenshots to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "c64a4eda-6b7c-4f54-9162-c1dd280f2826",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/tags/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "retrieve organization tags",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization tags",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "c9c6404d-4bb0-4ad3-a5ee-6ce65f2f7bc4",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/logs/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "retrieve organization logs",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization logs",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "cc6fa774-b20b-4509-932b-3e5e64611f75",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/apis/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Returns the APIs for an organization",
+      "descriptionFormat": "html",
+      "time": 1428377676616,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization APIs",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "d03e47c4-7a48-44fe-b97d-57a883af5165",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "PUT",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "name",
+          "value": "{{name}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "details",
+          "value": "{{details}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "summary",
+          "value": "{{summary}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "url",
+          "value": "{{url}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "phone",
+          "value": "{{phone}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "email",
+          "value": "{{email}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "address",
+          "value": "{{address}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "city",
+          "value": "{{city}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "state",
+          "value": "{{state}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "postal_code",
+          "value": "{{postal_code}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "country",
+          "value": "{{country}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "rank",
+          "value": "{{rank}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "location",
+          "value": "{{location}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "photo",
+          "value": "{{photo}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "update organization",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "update organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "de2c20b8-3e4e-4c16-bd10-f0faa8597279",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/urls/",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "POST",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appid",
+          "value": "{{appid}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "appkey",
+          "value": "{{appkey}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "type",
+          "value": "{{type}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "url",
+          "value": "{{url}}",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "name",
+          "value": "{{name}}",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "add URL for organization",
+      "descriptionFormat": "html",
+      "time": 1428377676618,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "add URL to organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "f0567a1b-ae1d-4e62-a93d-7364cf5068b6",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/locations/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "Returns the locations for an organization",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "retrieve organization locations",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "f3366d5e-a87c-4e63-a7bf-1e4e10ec43e0",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "get organization",
+      "descriptionFormat": "html",
+      "time": 1428377676615,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "get organization",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "f7c201bc-0f24-4115-a2a8-67e9492a237a",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/{{organization_id}}/locations/{location_id}?appid={{appid}}&appkey={{appkey}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "DELETE",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "delete a organization tag",
+      "descriptionFormat": "html",
+      "time": 1428377676617,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "delete a organization tag",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    },
+    {
+      "id": "ff2c20d7-b646-4d35-887a-85622bb5c7c1",
+      "headers": "",
+      "url": "http://organization.api.kinlane.com//organization/?appid={{appid}}&appkey={{appkey}}&query={{query}}&",
+      "pathVariables": {},
+      "preRequestScript": "",
+      "method": "GET",
+      "data": [
+        {
+          "key": "size",
+          "value": "original",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataMode": "params",
+      "description": "get organizations",
+      "descriptionFormat": "html",
+      "time": 1428377676614,
+      "version": 2,
+      "responses": [],
+      "tests": "",
+      "collectionId": "c4a865ff-b48b-446d-87ec-5b6fad0d51d9",
+      "synced": false,
+      "name": "get organizations",
+      "owner": "27278",
+      "folder": "1a7170a5-610b-49f1-967a-a1d5f1adbb13"
+    }
+  ]
 }
