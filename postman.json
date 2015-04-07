@@ -1,0 +1,1477 @@
+{
+	"apiVersion": "1.0.0",
+	"swaggerVersion": "1.2",
+	"basePath": "organization.api.kinlane.com",
+	"resourcePath": "/",
+	"produces": ["application/json"],
+	"consumes": ["application/json"],
+	"apis": [{
+		"path": "/organization/",
+		"operations": [{
+			"method": "get",
+			"summary": "get organizations",
+			"notes": "get organizations",
+			"nickname": "getOrganizations",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "query",
+				"description": "a text query to search across organizations"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "post",
+			"summary": "add new organization",
+			"notes": "add new organization",
+			"nickname": "addOrganization",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "address",
+				"description": "primary address of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "city",
+				"description": "primary city of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "country",
+				"description": "primary country of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "details",
+				"description": "details for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "email",
+				"description": "email for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "location",
+				"description": "primary location of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "name",
+				"description": "name of organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "phone",
+				"description": "phone for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "photo",
+				"description": "primary photo of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "postal_code",
+				"description": "primary postal code of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "rank",
+				"description": "ranking for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "state",
+				"description": "primary state of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "summary",
+				"description": "sumary of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "unique url for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete organization",
+			"notes": "delete organization",
+			"nickname": "deleteOrganization",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "the unique id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/",
+		"operations": [{
+			"method": "get",
+			"summary": "get organization",
+			"notes": "get organization",
+			"nickname": "getOrganization",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "the unique id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "put",
+			"summary": "update organization",
+			"notes": "update organization",
+			"nickname": "updateOrganization",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "address",
+				"description": "primary address of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "city",
+				"description": "primary city of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "country",
+				"description": "primary country of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "details",
+				"description": "details for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "email",
+				"description": "email for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "location",
+				"description": "primary location of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "name",
+				"description": "name of organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "the unique id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "phone",
+				"description": "phone for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "photo",
+				"description": "primary photo of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "postal_code",
+				"description": "primary postal code of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "rank",
+				"description": "ranking for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "state",
+				"description": "primary state of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "summary",
+				"description": "sumary of the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "unique url for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "get",
+			"summary": "retrieve organization APIs",
+			"notes": "Returns the APIs for an organization",
+			"nickname": "getAPIsForOrganization",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/apis/",
+		"operations": [{
+			"method": "post",
+			"summary": "add API to organization",
+			"notes": "add API for organization",
+			"nickname": "addOrganizationAPI",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "api_id",
+				"description": "API unique ID"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization API",
+			"notes": "deletes a API applied to organization",
+			"nickname": "deleteOrganizationAPI",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "unique ID for API to remove from organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/apis/{api_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization building blocks",
+			"notes": "retrieve organization building blocks",
+			"nickname": "getOrganizationBuildingBlocks",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/buildingblocks/",
+		"operations": [{
+			"method": "post",
+			"summary": "add building block to organization",
+			"notes": "add building block for organization",
+			"nickname": "addOrganizationBuildingBlock",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "building_block_id",
+				"description": "building block unique id"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "tools_id",
+				"description": "tool id for the building block"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "url for the building block"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization building block",
+			"notes": "delete a organization building block",
+			"nickname": "deleteOrganizationBuildingBlock",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "building_block_id",
+				"description": "building block to remove from organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/buildingblocks/{building_block_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization images",
+			"notes": "Returns the images for an organization",
+			"nickname": "getOrganizationImages",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/images/",
+		"operations": [{
+			"method": "post",
+			"summary": "add image to organization",
+			"notes": "add image for organization",
+			"nickname": "addOrganizationImage",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "name",
+				"description": "image name"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "path",
+				"description": "image path"
+			},
+			{
+				"paramType": "formData",
+				"name": "type",
+				"description": "image type"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization image",
+			"notes": "deletes a image applied to organization",
+			"nickname": "deleteOrganizationImage",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "image_id",
+				"description": "id for the image to remove from organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/images/{image_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization locations",
+			"notes": "Returns the locations for an organization",
+			"nickname": "getOrganizationLocations",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/locations/",
+		"operations": [{
+			"method": "post",
+			"summary": "add location to organization",
+			"notes": "add location for organization",
+			"nickname": "addOrganizationLocation",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "address1",
+				"description": "location address 1"
+			},
+			{
+				"paramType": "formData",
+				"name": "address2",
+				"description": "location address 2"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "city",
+				"description": "location city"
+			},
+			{
+				"paramType": "formData",
+				"name": "country_code",
+				"description": "location country code"
+			},
+			{
+				"paramType": "formData",
+				"name": "description",
+				"description": "location description"
+			},
+			{
+				"paramType": "formData",
+				"name": "latitude",
+				"description": "location latitude"
+			},
+			{
+				"paramType": "formData",
+				"name": "longitude",
+				"description": "location longitude"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "state_code",
+				"description": "location state code"
+			},
+			{
+				"paramType": "formData",
+				"name": "zip_code",
+				"description": "location zip code"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization tag",
+			"notes": "delete a organization tag",
+			"nickname": "deleteorganizationLocation",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "location_id",
+				"description": "id of location to remove from organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/locations/{location_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization logs",
+			"notes": "retrieve organization logs",
+			"nickname": "getOrganizationLogs",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/logs/",
+		"operations": [{
+			"method": "post",
+			"summary": "add log to organization",
+			"notes": "add log to organization",
+			"nickname": "addOrganizationLog",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "details",
+				"description": "log details"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "type",
+				"description": "type of log entry"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization log",
+			"notes": "delete a organization log",
+			"nickname": "deleteOrganizationLog",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "log_id",
+				"description": "id for the log"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/logs/{log_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an APIs notes",
+			"notes": "Returns the notes for an API",
+			"nickname": "getOrganizationNotes",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/notes/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an Organization note",
+			"notes": "Add a note for the organization",
+			"nickname": "addOrganizationNote",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "note",
+				"description": "the full text of note"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "formData",
+				"name": "type",
+				"description": "type of the note"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an organization note",
+			"notes": "Deletes a note for a organization",
+			"nickname": "deleteOrganizationNote",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "note_id",
+				"description": "id for the note"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/notes/{note_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization screenshots",
+			"notes": "retrieve organization screenshots",
+			"nickname": "getOrganizationScreenshots",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/screenshots/",
+		"operations": [{
+			"method": "post",
+			"summary": "add screenshots to organization",
+			"notes": "add screenshots for organization",
+			"nickname": "addOrganizationScreenshot",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "name",
+				"description": "image name"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "path",
+				"description": "image path"
+			},
+			{
+				"paramType": "formData",
+				"name": "type",
+				"description": "image type"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization screenshot",
+			"notes": "delete a organization screenshot",
+			"nickname": "deleteOrganizationScreenshot",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "screenshot_id",
+				"description": "id of the screenshot to remove from organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/screenshots/{screenshot_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization tags",
+			"notes": "retrieve organization tags",
+			"nickname": "getOrganizationTags",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/tags/",
+		"operations": [{
+			"method": "post",
+			"summary": "add tag to organization",
+			"notes": "add tag for organization",
+			"nickname": "addOrganizationTag",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "tag",
+				"description": "tag name"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization tag",
+			"notes": "deletes a tag applied to organization",
+			"nickname": "deleteOrganizationTag",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "tag",
+				"description": "tag to remove from organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/tags/{tag}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization tools",
+			"notes": "Returns the tols for an organization",
+			"nickname": "getOrganizationTools",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/tools/",
+		"operations": [{
+			"method": "post",
+			"summary": "add tool to organization",
+			"notes": "add tool for organization",
+			"nickname": "addOrganizationTool",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "tool_id",
+				"description": "the unique tool id"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "url for the tool"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization tool",
+			"notes": "deletes a tool applied to organization",
+			"nickname": "getOrganizationTool",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "tool_id",
+				"description": "tool to remove from organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/tools/{tool_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve organization url",
+			"notes": "retrieve organization url",
+			"nickname": "getOrganizationURLs",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for organization"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/organization/{organization_id}/urls/",
+		"operations": [{
+			"method": "post",
+			"summary": "add URL to organization",
+			"notes": "add URL for organization",
+			"nickname": "addOrganizationURL",
+			"parameters": [{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "name",
+				"description": "a name for the url"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "formData",
+				"name": "type",
+				"description": "type of url"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "the url"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete a organization url",
+			"notes": "delete a organization url",
+			"nickname": "deleteOrganizationURL",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "path",
+				"name": "url_id",
+				"description": "id for the url"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	}],
+	"models": [{
+		"id": "0",
+		"properties": {
+			"organization_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"name": {
+				"description": "",
+				"type": "delete"
+			},
+			"details": {
+				"description": "",
+				"type": "delete"
+			},
+			"summary": {
+				"description": "",
+				"type": "delete"
+			},
+			"post_date": {
+				"description": "",
+				"type": "delete"
+			},
+			"url": {
+				"description": "",
+				"type": "delete"
+			},
+			"phone": {
+				"description": "",
+				"type": "delete"
+			},
+			"email": {
+				"description": "",
+				"type": "delete"
+			},
+			"address": {
+				"description": "",
+				"type": "delete"
+			},
+			"city": {
+				"description": "",
+				"type": "delete"
+			},
+			"state": {
+				"description": "",
+				"type": "delete"
+			},
+			"postal_code": {
+				"description": "",
+				"type": "delete"
+			},
+			"country": {
+				"description": "",
+				"type": "delete"
+			},
+			"rank": {
+				"description": "",
+				"type": "delete"
+			},
+			"location": {
+				"description": "",
+				"type": "delete"
+			},
+			"photo": {
+				"description": "",
+				"type": "delete"
+			},
+			"api_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"title": {
+				"description": "",
+				"type": "delete"
+			},
+			"link": {
+				"description": "",
+				"type": "delete"
+			},
+			"item_date": {
+				"description": "",
+				"type": "delete"
+			},
+			"status": {
+				"description": "",
+				"type": "delete"
+			},
+			"public_comment": {
+				"description": "",
+				"type": "delete"
+			},
+			"original_date": {
+				"description": "",
+				"type": "delete"
+			},
+			"author": {
+				"description": "",
+				"type": "delete"
+			},
+			"processed": {
+				"description": "",
+				"type": "delete"
+			},
+			"domain": {
+				"description": "",
+				"type": "delete"
+			},
+			"screenshot_url": {
+				"description": "",
+				"type": "delete"
+			},
+			"resolved_url": {
+				"description": "",
+				"type": "delete"
+			},
+			"weekly_summary": {
+				"description": "",
+				"type": "delete"
+			},
+			"weekly_roundup": {
+				"description": "",
+				"type": "delete"
+			},
+			"tag_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"tag": {
+				"description": "",
+				"type": "delete"
+			},
+			"api_count": {
+				"description": "",
+				"type": "delete"
+			},
+			"note_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"type": {
+				"description": "",
+				"type": "delete"
+			},
+			"note": {
+				"description": "",
+				"type": "delete"
+			},
+			"image_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"path": {
+				"description": "",
+				"type": "delete"
+			},
+			"screenshot_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"building_block_api": {
+				"description": "",
+				"type": "delete"
+			},
+			"tool_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"log_date": {
+				"description": "",
+				"type": "delete"
+			},
+			"location_id": {
+				"description": "",
+				"type": "delete"
+			},
+			"description": {
+				"description": "",
+				"type": "delete"
+			},
+			"address1": {
+				"description": "",
+				"type": "delete"
+			},
+			"address2": {
+				"description": "",
+				"type": "delete"
+			},
+			"post_code": {
+				"description": "",
+				"type": "delete"
+			},
+			"latitude": {
+				"description": "",
+				"type": "delete"
+			},
+			"longitude": {
+				"description": "",
+				"type": "delete"
+			}
+		}
+	}]
+}
