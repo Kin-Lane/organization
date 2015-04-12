@@ -2,14 +2,14 @@
   "swagger": "2.0",
   "info": {
     "title": "Organization",
-    "description": "This is an organization for all my organization entries. I use a single organization system to manage all my sites. Based upon tagging, I then publish each post out to its respective Github Page based repo.",
+    "description": "This is an organization API that I use to keep track of companies who are doing interesting things in the API space, or should be.",
     "termsOfService": "http://stack.network/terms-of-service.html",
     "version": "v2"
   },
   "host": "organization.api.kinlane.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "produces": [
     "application/json"
