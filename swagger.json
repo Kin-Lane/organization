@@ -2016,7 +2016,52 @@
           "URLs"
         ]
       }
-    }
+    },
+    "/organization/{organization_id}/definitions/export/apisjson/.14/": {
+      "get": {
+        "summary": "export an apis.json definition",
+        "description": "export an apis.json definition",
+        "operationId": "exportOrganizationAPIsJSON",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "id for the organization",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],        
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
+        ]
+      }
+    },     
   },
   "definitions": {
     "organization": {
