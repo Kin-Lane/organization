@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "title": "Organization",
-    "description": "This is an organization API that I use to keep track of companies who are doing interesting things in the API space, or should be.",
-    "termsOfService": "http://stack.network/terms-of-service.html",
+    "description": "This is an organization API that I use to keep track of companies who are doing interesting things in the API space, or at least they should be.",
+    "termsOfService": "http://kinlane.com/terms-of-service.html",
     "version": "v2"
   },
   "host": "organization.api.kinlane.com",
