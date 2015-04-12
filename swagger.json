@@ -2045,7 +2045,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -2061,7 +2061,7 @@
           "Definitions"
         ]
       }
-    },     
+    }
   },
   "definitions": {
     "organization": {
@@ -2393,7 +2393,7 @@
           "type": "string"
         }
       }
-    },    
+    },
     "locations": {
       "properties": {
         "location_id": {
@@ -2435,6 +2435,14 @@
         },
         "longitude": {
           "description": "longitude for the location",
+          "type": "string"
+        }
+      }
+    },
+    "definition": {
+      "properties": {
+        "url": {
+          "description": "url for the definition",
           "type": "string"
         }
       }
