@@ -27,8 +27,8 @@ require_once('m-organization-organization_id-logs-get.php');
 
 require_once('m-organization-organization_id-tools-get.php');
 
-require_once('m-organization-organization_id-definitions-export-apisjson-14.php');
-require_once('m-organization-organization_id-definitions-export-apisjson-14-master.php');
+require_once('m-organization-organization_id-definitions-export-apisjson-14-get.php');
+require_once('m-organization-organization_id-definitions-export-apisjson-14-master-get.php');
 
 require_once('m-organization-jobs-cacheurls-get.php');
 

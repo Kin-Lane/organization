@@ -57,8 +57,8 @@ require_once('m-organization-organization_id-tools-get.php');
 require_once('m-organization-organization_id-tools-post.php');
 require_once('m-organization-organization_id-tools-tool_id-delete.php');
 
-require_once('m-organization-organization_id-definitions-export-apisjson-14.php');
-require_once('m-organization-organization_id-definitions-export-apisjson-14-master.php');
+require_once('m-organization-organization_id-definitions-export-apisjson-14-get.php');
+require_once('m-organization-organization_id-definitions-export-apisjson-14-master-get.php');
 
 require_once('m-organization-organization_id-questioins-bulk-post.php');
 
