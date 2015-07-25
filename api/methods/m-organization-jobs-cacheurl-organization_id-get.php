@@ -19,7 +19,8 @@ $app->get($route, function ($organization_id)  use ($app){
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Github' LIMIT 1) AS Github_URL,";
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'APIs.json' LIMIT 1) AS APISJSON_URL,";
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'SDKs.io' LIMIT 1) AS SDKSIO_URL,";
-	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Postman Collection' LIMIT 1) AS Postman_URL";
+	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Postman Collection' LIMIT 1) AS Postman_URL,";
+	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Developer' LIMIT 1) AS Developer_URL";
 	$CompanyQuery .= " FROM company c";
 	$CompanyQuery .= " WHERE Company_ID = " . $organization_id;
 	$CompanyQuery .= " ORDER BY c.Name LIMIT 50";
@@ -45,6 +46,7 @@ $app->get($route, function ($organization_id)  use ($app){
 		$apisjson_url = $Database['APISJSON_URL'];
 		$sdksio_url = $Database['SDKSIO_URL'];
 		$postman_url = $Database['Postman_URL'];
+		$developer_url = $Database['Developer_URL'];
 
 		$org_tags = "";
 		$TagQuery = "SELECT t.Tag_ID, t.Tag FROM tags t INNER JOIN company_tag_pivot sptp ON t.Tag_ID = sptp.Tag_ID WHERE sptp.Company_ID = " . $organization_id . " ORDER BY Tag";
@@ -71,6 +73,7 @@ $app->get($route, function ($organization_id)  use ($app){
 		$UpdateQuery .= " apisjson_url = '" . $apisjson_url . "',";
 		$UpdateQuery .= " sdksio_url = '" . $sdksio_url . "',";
 		$UpdateQuery .= " postman_url = '" . $postman_url . "',";
+		$UpdateQuery .= " portal_url = '" . $developer_url . "',";
 		$UpdateQuery .= " Photo = '" . $photo . "',";
 		$UpdateQuery .= " photo_width = " . $photo_width . ",";
 		$UpdateQuery .= " url_cache = " . $url_cache;
