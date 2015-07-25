@@ -92,6 +92,7 @@ $app->get($route, function ($organization_id)  use ($app){
 		$F['apisjson_url'] = $apisjson_url;
 		$F['sdksio_url'] = $sdksio_url;
 		$F['postman_url'] = $postman_url;
+		$F['portal_url'] = $developer_url;
 		$F['photo'] = $photo;
 		$F['photo_width'] = $photo_width;
 

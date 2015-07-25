@@ -76,7 +76,6 @@ $app->get($route, function ($tag)  use ($app){
 		$F['sdksio_url'] = $sdksio_url;
 		$F['postman_url'] = $postman_url;
 		$F['portal_url'] = $portal_url;
-
 		$F['phone'] = $phone;
 		$F['email'] = $email;
 		$F['address'] = $address;
@@ -86,7 +85,6 @@ $app->get($route, function ($tag)  use ($app){
 		$F['country'] = $country;
 		$F['rank'] = $rank;
 		$F['location'] = $location;
-
 		$F['photo'] = $photo;
 		$F['photo_width'] = $photo_width;
 
