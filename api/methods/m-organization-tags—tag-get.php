@@ -56,6 +56,7 @@ $app->get($route, function ($tag)  use ($app){
 		$apisjson_url = $Database['apisjson_url'];
 		$sdksio_url =  $Database['sdksio_url'];
 		$postman_url =  $Database['postman_url'];
+		$portal_url =  $Database['portal_url'];
 
 		$org_tags =  $Database['tags'];
 
@@ -74,6 +75,7 @@ $app->get($route, function ($tag)  use ($app){
 		$F['apisjson_url'] = $apisjson_url;
 		$F['sdksio_url'] = $sdksio_url;
 		$F['postman_url'] = $postman_url;
+		$F['portal_url'] = $portal_url;
 
 		$F['phone'] = $phone;
 		$F['email'] = $email;
