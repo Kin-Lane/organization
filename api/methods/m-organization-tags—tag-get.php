@@ -25,9 +25,9 @@ $app->get($route, function ($tag)  use ($app){
 		$organization_id = $Database['Company_ID'];
 		$name = $Database['Name'];
 		$details = $Database['Details'];
-		$details = strip_tags($details);
+		$details = scrub($details);
 		$summary = $Database['Summary'];
-		$summary = strip_tags($summary);
+		$summary = scrub($summary);
 		$post_date = $Database['Post_Date'];
 		$url = $Database['URL'];
 		$phone = $Database['Phone'];
