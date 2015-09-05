@@ -2,6 +2,8 @@
 $route = '/organization/:organization_id/screenshots/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
 
 	$ReturnObject = array();
 
@@ -17,6 +19,8 @@ $app->get($route, function ($organization_id)  use ($app){
 		$path = $Database['Image_URL'];
 		$name = $Database['Image_Name'];
 		$type = $Database['Type'];
+
+		$screenshot_id = prepareIdOut($screenshot_id,$host);
 
 		$F = array();
 		$F['screenshot_id'] = $screenshot_id;

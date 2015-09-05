@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/buildingblocks/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$BuildingBlockQuery = "SELECT abb.Company_Building_Block_ID as ID, bb.Building_Block_ID, bb.Building_Block_Category_ID, bb.Name, bb.About, bbc.Name AS Building_Block_Category, bbc.Type, abb.URL AS URL FROM building_block bb JOIN company_building_block_pivot abb ON bb.Building_Block_ID = abb.Building_Block_ID JOIN building_block_category bbc ON bb.Building_Block_Category_ID = bbc.BuildingBlockCategory_ID WHERE abb.Company_ID = " . $organization_id;
@@ -26,6 +29,9 @@ $app->get($route, function ($organization_id)  use ($app){
 
 		$building_block_category = $Database['Building_Block_Category'];
 		$url = $Database['URL'];
+
+		$organization_id = prepareIdOut($organization_id,$host);
+		$building_block_id = prepareIdOut($building_block_id,$host);
 
 		$F = array();
 		$F['buildingblock_id'] = $building_block_id;

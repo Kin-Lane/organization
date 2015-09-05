@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/';
 $app->put($route, function ($organization_id) use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -56,6 +59,8 @@ $app->put($route, function ($organization_id) use ($app){
 		//echo $query . "<br />";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		}
+
+	$organization_id = prepareIdOut($organization_id,$host);
 
 	$F = array();
 	$F['organization_id'] = $organization_id;

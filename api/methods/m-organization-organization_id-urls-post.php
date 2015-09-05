@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/urls/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -17,6 +20,8 @@ $app->post($route, function ($organization_id)  use ($app){
 		$query = "INSERT INTO company_url(Company_ID,Type,URL,Name) VALUES(" . $organization_id . ",'" . $type . "','" . $url . "','" . $name . "')";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$url_id = mysql_insert_id();
+
+		$url_id = prepareIdOut($url_id,$host);
 
 		$F = array();
 		$F['url_id'] = $url_id;

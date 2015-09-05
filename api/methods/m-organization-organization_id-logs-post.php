@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/logs/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -16,6 +19,8 @@ $app->post($route, function ($organization_id)  use ($app){
 		$query = "INSERT INTO company_log(Company_ID,Type,About,Log_Date) VALUES(" . $organization_id . ",'" . $type . "','" . $details . "','" . $log_date . "')";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$log_id = mysql_insert_id();
+
+		$log_id = prepareIdOut($log_id,$host);
 
 		$F = array();
 		$F['log_id'] = $log_id;

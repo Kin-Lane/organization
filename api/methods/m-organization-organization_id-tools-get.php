@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/tools/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * FROM tools t";
@@ -18,6 +21,8 @@ $app->get($route, function ($organization_id)  use ($app){
 		$details = $Database['Details'];
 		$details = scrub($details);
 		$post_date = $Database['Post_Date'];
+
+		$tool_id = prepareIdOut($tool_id,$host);
 
 		$F = array();
 		$F['tool_id'] = $tool_id;

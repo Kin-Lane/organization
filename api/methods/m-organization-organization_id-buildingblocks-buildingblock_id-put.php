@@ -2,6 +2,10 @@
 $route = '/organization/:organization_id/buildingblocks/:buildingblock_id';
 $app->put($route, function ($organization_id,$building_block_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$building_block_id = prepareIdIn($building_block_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -24,7 +28,10 @@ $app->put($route, function ($organization_id,$building_block_id)  use ($app){
 		$query .= "  WHERE Company_ID = " . $organization_id . " AND Building_Block_ID = " . $building_block_id;
 
 		mysql_query($query) or die('Query failed: ' . mysql_error());
-		$buildingblock_ID = mysql_insert_id();
+		$building_block_id = mysql_insert_id();
+
+		$building_block_id = prepareIdOut($building_block_id,$host);
+		$tools_id = prepareIdOut($tools_id,$host);
 
 		$F = array();
 		$F['building_block_id'] = $building_block_id;

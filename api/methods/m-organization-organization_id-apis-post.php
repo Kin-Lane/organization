@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/apis/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -26,6 +29,9 @@ $app->post($route, function ($organization_id)  use ($app){
 			//echo $query . "<br />";
 			mysql_query($query) or die('Query failed: ' . mysql_error());
 			}
+
+		$api_id = prepareIdOut($api_id,$host);
+
 		$F = array();
 		$F['api_id'] = $api_id;
 		$F['organization_id'] = $organization_id;

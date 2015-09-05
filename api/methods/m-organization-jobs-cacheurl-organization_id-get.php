@@ -81,6 +81,9 @@ $app->get($route, function ($organization_id)  use ($app){
 		//echo $UpdateQuery . "<br />";
 		$UpdateResults = mysql_query($UpdateQuery) or die('Query failed: ' . mysql_error());
 
+		$host = $_SERVER['HTTP_HOST'];
+		$organization_id = prepareIdOut($organization_id,$host);
+		
 		$F = array();
 		$F['organization_id'] = $organization_id;
 		$F['name'] = $name;

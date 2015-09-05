@@ -81,6 +81,8 @@ $app->post($route, function () use ($app){
 		$organization_id = mysql_insert_id();
 		}
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdOut($organization_id,$host);
 
 	$F = array();
 	$F['organization_id'] = $organization_id;

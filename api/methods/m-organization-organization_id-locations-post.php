@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/locations/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -54,6 +57,8 @@ $app->post($route, function ($organization_id)  use ($app){
 		//echo $Query . "<br />";
 		mysql_query($Query) or die('Query failed: ' . mysql_error());
 		$location_id = mysql_insert_id();
+
+		$location_id = prepareIdOut($location_id,$host);
 
 		$F = array();
 		$F['location_id'] = $location_id;

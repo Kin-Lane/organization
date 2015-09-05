@@ -2,6 +2,10 @@
 $route = '/organization/:organization_id/screenshots/:screenshot_id';
 $app->delete($route, function ($organization_id,$screenshot_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$screenshot_id = prepareIdIn($screenshot_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -9,6 +13,8 @@ $app->delete($route, function ($organization_id,$screenshot_id)  use ($app){
 
 	$DeleteQuery = "DELETE FROM company_screenshot WHERE ID = " . $screenshot_id;
 	$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
+
+	$screenshot_id = prepareIdOut($screenshot_id,$host);
 
 	$F = array();
 	$F['screenshot_id'] = $screenshot_id;

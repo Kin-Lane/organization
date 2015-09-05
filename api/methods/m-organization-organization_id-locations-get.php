@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/locations/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * from company_location cl";
@@ -22,6 +25,8 @@ $app->get($route, function ($organization_id)  use ($app){
 		$country_code = $Database['country_code'];
 		$latitude = $Database['latitude'];
 		$longitude = $Database['longitude'];
+
+		$location_id = prepareIdOut($location_id,$host);
 
 		$F = array();
 		$F['location_id'] = $location_id;

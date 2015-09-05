@@ -2,6 +2,10 @@
 $route = '/organization/:organization_id/logs/:log_id';
 $app->put($route, function ($organization_id,$log_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$log_id = prepareIdIn($log_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -16,6 +20,8 @@ $app->put($route, function ($organization_id,$log_id)  use ($app){
 		$query = "UPDATE company_log SET Type = '" . $type . "', About = '" . $details . "' WHERE Company_Log_ID = " . $log_id;
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$log_ID = mysql_insert_id();
+
+		$log_id = prepareIdOut($log_id,$host);
 
 		$F = array();
 		$F['log_id'] = $log_id;

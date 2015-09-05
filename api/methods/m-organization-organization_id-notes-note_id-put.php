@@ -2,6 +2,10 @@
 $route = '/organization/:organization_id/notes/:note_id';
 $app->put($route, function ($organization_id,$note_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$note_id = prepareIdIn($note_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -16,6 +20,8 @@ $app->put($route, function ($organization_id,$note_id)  use ($app){
 		$query = "UPDATE company_notes SET Type = '" . $Type . "', Note = '" . $Type . "' WHERE ID = " . $note_id;
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$Note_ID = mysql_insert_id();
+
+		$note_id = prepareIdOut($note_id,$host);
 
 		$F = array();
 		$F['note_id'] = $note_id;

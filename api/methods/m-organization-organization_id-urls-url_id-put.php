@@ -1,6 +1,10 @@
 <?php
 $route = '/organization/:organization_id/urls/:url_id';
-$app->put($route, function ($organization_id,$URL_ID)  use ($app){
+$app->put($route, function ($organization_id,$url_id)  use ($app){
+
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$url_id = prepareIdIn($url_id,$host);
 
 	$ReturnObject = array();
 
@@ -14,12 +18,14 @@ $app->put($route, function ($organization_id,$URL_ID)  use ($app){
 		$url = trim(mysql_real_escape_string($param['url']));
 		$name = trim(mysql_real_escape_string($param['name']));
 
-		$query = "UPDATE company_urls SET Type = '" . $type . "', URL = '" . $url . "', Name = '" . $name . "' WHERE Company_URL_ID = " . $URL_ID;
+		$query = "UPDATE company_urls SET Type = '" . $type . "', URL = '" . $url . "', Name = '" . $name . "' WHERE Company_URL_ID = " . $url_id;
 		mysql_query($query) or die('Query failed: ' . mysql_error());
-		$url_ID = mysql_insert_id();
+		$url_id = mysql_insert_id();
+
+		$url_id = prepareIdOut($url_id,$host);
 
 		$F = array();
-		$F['url_id'] = $URL_ID;
+		$F['url_id'] = $url_id;
 		$F['type'] = $type;
 		$F['url'] = $url;
 		$F['name'] = $name;

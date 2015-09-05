@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/images/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * from company_image ai";
@@ -16,6 +19,8 @@ $app->get($route, function ($organization_id)  use ($app){
 		$type = $Database['Type'];
 		$path = $Database['Image_Path'];
 		$name = $Database['Image_Name'];
+
+		$image_id = prepareIdOut($image_id,$host);
 
 		$F = array();
 		$F['image_id'] = $image_id;

@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/urls/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * from company_url cn";
@@ -12,13 +15,15 @@ $app->get($route, function ($organization_id)  use ($app){
 	while ($Database = mysql_fetch_assoc($DatabaseResult))
 		{
 
-		$url_ID = $Database['Company_URL_ID'];
+		$url_id = $Database['Company_URL_ID'];
 		$type = $Database['Type'];
 		$url = $Database['URL'];
 		$name = $Database['Name'];
 
+		$url_id = prepareIdOut($url_id,$host);
+
 		$F = array();
-		$F['url_id'] = $url_ID;
+		$F['url_id'] = $url_id;
 		$F['type'] = $type;
 		$F['url'] = $url;
 		$F['name'] = $name;

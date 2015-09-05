@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/questions/bulk/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 	$ReturnObject['inserted'] = array();
 	$ReturnObject['not-inserted'] = array();

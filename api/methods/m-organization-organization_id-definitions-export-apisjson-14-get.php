@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/definitions/export/apisjson/.14/';
 $app->get($route, function ($organization_id)  use ($app,$guser,$gpass){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();

@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/screenshots/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -16,6 +19,8 @@ $app->post($route, function ($organization_id)  use ($app){
 		$query = "INSERT INTO company_screenshot(Company_ID,Type,Image_Name,Image_URL) VALUES(" . $organization_id . ",'" . $type . "','" . $path . "','" . $name . "')";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$screenshot_id = mysql_insert_id();
+
+		$screenshot_id = prepareIdOut($screenshot_id,$host);
 
 		$F = array();
 		$F['screenshot_id'] = $screenshot_id;

@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/';
 $app->get($route, function ($company_ID)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * FROM company WHERE Company_ID = " . $company_ID;
@@ -31,6 +34,8 @@ $app->get($route, function ($company_ID)  use ($app){
 		$location = $Database['Location'];
 		$photo = $Database['Photo'];
 		// manipulation zone
+
+		$organization_id = prepareIdOut($organization_id,$host);
 
 		$F = array();
 		$F['organization_id'] = $organization_id;

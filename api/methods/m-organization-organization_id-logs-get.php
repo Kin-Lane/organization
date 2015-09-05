@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/logs/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT * FROM company_log al";
@@ -20,6 +23,8 @@ $app->get($route, function ($organization_id)  use ($app){
 
 		$Type = $Database['Type'];
 		$log_date = $Database['Log_Date'];
+
+		$log_id = prepareIdOut($log_id,$host);
 
 		$F = array();
 		$F['log_id'] = $log_id;

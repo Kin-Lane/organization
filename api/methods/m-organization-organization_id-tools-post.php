@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/tools/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -17,6 +20,8 @@ $app->post($route, function ($organization_id)  use ($app){
 		$query = "INSERT INTO company_tool_pivot(Company_ID,Tools_ID,URL) VALUES(" . $organization_id . "," . $tool_id . ",'" . $url . "'); ";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
 		$tool_id = mysql_insert_id();
+
+		$tool_id = prepareIdOut($tool_id,$host);
 
 		$F = array();
 		$F['tool_id'] = $tool_id;

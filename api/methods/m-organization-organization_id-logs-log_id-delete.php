@@ -2,6 +2,10 @@
 $route = '/organization/:organization_id/logs/:log_id';
 $app->delete($route, function ($organization_id,$log_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+	$log_id = prepareIdIn($log_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -9,6 +13,8 @@ $app->delete($route, function ($organization_id,$log_id)  use ($app){
 
 	$DeleteQuery = "DELETE FROM company_log WHERE Company_Log_ID = " . $log_id;
 	$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
+
+	$log_id = prepareIdOut($log_id,$host);
 
 	$F = array();
 	$F['log_id'] = $log_id;

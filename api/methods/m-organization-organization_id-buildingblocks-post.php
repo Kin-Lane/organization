@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/buildingblocks/';
 $app->post($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -32,7 +35,9 @@ $app->post($route, function ($organization_id)  use ($app){
 
 		$query = "INSERT INTO company_building_block_pivot(Company_ID,Building_Block_ID,Tools_ID,URL) VALUES(" . $organization_id . "," . $building_block_id . "," . $tools_id . ",'" . $url . "'); ";
 		mysql_query($query) or die('Query failed: ' . mysql_error());
-		$buildingblock_ID = mysql_insert_id();
+		$building_block_id = mysql_insert_id();
+
+		$building_block_id = prepareIdOut($building_block_id,$host);
 
 		$F = array();
 		$F['building_block_id'] = $building_block_id;

@@ -45,6 +45,9 @@ $app->get($route, function ()  use ($app){
 		$photo = $Database['Photo'];
 		// manipulation zone
 
+		$host = $_SERVER['HTTP_HOST'];
+		$organization_id = prepareIdOut($organization_id,$host);
+		
 		$F = array();
 		$F['organization_id'] = $organization_id;
 		$F['name'] = $name;

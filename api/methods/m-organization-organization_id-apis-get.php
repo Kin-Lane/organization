@@ -2,6 +2,9 @@
 $route = '/organization/:organization_id/apis/';
 $app->get($route, function ($organization_id)  use ($app){
 
+	$host = $_SERVER['HTTP_HOST'];
+	$organization_id = prepareIdIn($organization_id,$host);
+
 	$ReturnObject = array();
 
 	$Query = "SELECT a.API_ID,a.Name FROM api a";
@@ -15,6 +18,8 @@ $app->get($route, function ($organization_id)  use ($app){
 
 		$api_id = $Database['API_ID'];
 		$name = $Database['Name'];
+
+		$api_id = prepareIdOut($api_id,$host);
 
 		$F = array();
 		$F['api_id'] = $api_id;
