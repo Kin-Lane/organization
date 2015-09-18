@@ -41,7 +41,7 @@ $app->get($route, function ($tag)  use ($app){
 		$location = $Database['Location'];
 
 		$tag_url = $Database['Tag_URL'];
-		$tag_description = $Database['Tag_Description'];
+		$tag_description = scrub($Database['Tag_Description']);
 
 		$photo = $Database['Photo'];
 		$photo_width = $Database['photo_width'];
@@ -62,7 +62,7 @@ $app->get($route, function ($tag)  use ($app){
 
 		$host = $_SERVER['HTTP_HOST'];
 		$organization_id = prepareIdOut($organization_id,$host);
-		
+
 		$F = array();
 		$F['organization_id'] = $organization_id;
 		$F['name'] = $name;
