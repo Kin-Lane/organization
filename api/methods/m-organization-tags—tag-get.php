@@ -42,6 +42,10 @@ $app->get($route, function ($tag)  use ($app){
 
 		$tag_url = $Database['Tag_URL'];
 		$tag_description = scrub($Database['Tag_Description']);
+		if($tag_description!='')
+			{
+			$details = $tag_description; 	
+			}
 
 		$photo = $Database['Photo'];
 		$photo_width = $Database['photo_width'];
