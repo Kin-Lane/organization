@@ -314,11 +314,11 @@ function prepareIdOut($id,$host)
 	return $id;
 	}
 
-function scrub($item)
-  {
-  $item = strip_tags($item);
-  $item = str_replace(chr(39),"",$item);
-  $item = str_replace(chr(39),"",$item);
-  return $item;
-  }
+  function scrub($item)
+  	{
+  	$item = strip_tags($item);
+  	$item = str_replace(chr(39),"",$item);
+  	$item = str_replace(chr(34),"",$item);
+    return $item;
+  	}
 ?>
