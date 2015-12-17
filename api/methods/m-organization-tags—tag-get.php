@@ -57,6 +57,7 @@ $app->get($route, function ($tag)  use ($app){
 		$sdksio_url =  $Database['sdksio_url'];
 		$postman_url =  $Database['postman_url'];
 		$portal_url =  $Database['portal_url'];
+		$base_url =  $Database['base_url'];
 
 		$org_tags =  $Database['tags'];
 
@@ -79,6 +80,7 @@ $app->get($route, function ($tag)  use ($app){
 		$F['sdksio_url'] = $sdksio_url;
 		$F['postman_url'] = $postman_url;
 		$F['portal_url'] = $portal_url;
+		$F['base_url'] = $base_url;
 		$F['phone'] = $phone;
 		$F['email'] = $email;
 		$F['address'] = $address;
