@@ -29,8 +29,10 @@ $app->get($route, function ()  use ($app){
 		$name = $Database['Name'];
 		$details = $Database['Details'];
 		$details = strip_tags($details);
+		$details = str_replace(chr(34),"",$details);
 		$summary = $Database['Summary'];
 		$summary = strip_tags($summary);
+		$summary = str_replace(chr(34),"",$summary);
 		$post_date = $Database['Post_Date'];
 		$url = $Database['URL'];
 		$phone = $Database['Phone'];

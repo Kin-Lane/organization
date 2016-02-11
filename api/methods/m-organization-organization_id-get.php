@@ -1,13 +1,13 @@
 <?php
 $route = '/organization/:organization_id/';
-$app->get($route, function ($company_ID)  use ($app){
+$app->get($route, function ($organization_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];
 	$organization_id = prepareIdIn($organization_id,$host);
 
 	$ReturnObject = array();
 
-	$Query = "SELECT * FROM company WHERE Company_ID = " . $company_ID;
+	$Query = "SELECT * FROM company WHERE Company_ID = " . $organization_id;
 	//echo $Query . "<br />";
 
 	$DatabaseResult = mysql_query($Query) or die('Query failed: ' . mysql_error());
@@ -18,9 +18,11 @@ $app->get($route, function ($company_ID)  use ($app){
 		$organization_id = $Database['Company_ID'];
 		$name = $Database['Name'];
 		$details = $Database['Details'];
-		$details = scrub($details);
+		$details = strip_tags($details);
+		$details = str_replace(chr(34),"",$details);
 		$summary = $Database['Summary'];
-		$summary = scrub($summary);
+		$summary = strip_tags($summary);
+		$summary = str_replace(chr(34),"",$summary);
 		$post_date = $Database['Post_Date'];
 		$url = $Database['URL'];
 		$phone = $Database['Phone'];

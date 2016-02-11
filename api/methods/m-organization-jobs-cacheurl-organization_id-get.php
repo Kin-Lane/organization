@@ -11,7 +11,9 @@ $app->get($route, function ($organization_id)  use ($app){
 
 	$CompanyQuery = "SELECT DISTINCT c.*,";
 	$CompanyQuery .= " (SELECT Image_Path FROM company_image WHERE Company_ID = c.Company_ID ORDER BY Company_Image_ID DESC LIMIT 1) as Photo,";
+	$CompanyQuery .= " (SELECT Image_URL FROM company_screenshot WHERE Company_ID = c.Company_ID ORDER BY ID DESC LIMIT 1) as Screenshot,";
 	$CompanyQuery .= " (SELECT Width FROM company_image WHERE Company_ID = c.Company_ID ORDER BY Company_Image_ID DESC LIMIT 1) as Photo_Width,";
+	$CompanyQuery .= " (SELECT Width FROM company_screenshot WHERE Company_ID = c.Company_ID ORDER BY ID DESC LIMIT 1) as Screenshot_Width,";
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Website' LIMIT 1) AS Website_URL,";
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Twitter' LIMIT 1) AS Twitter_URL,";
 	$CompanyQuery .= " (SELECT URL FROM company_url WHERE Company_ID = c.Company_ID AND Type = 'Blog' LIMIT 1) AS Blog_URL,";
@@ -36,7 +38,13 @@ $app->get($route, function ($organization_id)  use ($app){
 		$photo = $Database['Photo'];
 		$photo_width = $Database['Photo_Width'];
 		if($photo_width==''){ $photo_width = 0; }
+		
+		$screenshot = $Database['Screenshot'];
+		$screenshot_width = $Database['Screenshot_Width'];
+		if($screenshot_width==''){ $screenshot_width = 0; }		
 
+		if($photo_width==''){ $photo = $screenshot; $photo_width = $screenshot_width; }
+		
 		$website_url = $Database['Website_URL'];
 		$twitter_url = $Database['Twitter_URL'];
 
