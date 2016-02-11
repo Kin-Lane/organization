@@ -4,8 +4,8 @@ require_once('m-organization-post.php');
 
 require_once('m-organization-tags-get.php');
 
-require_once('m-organization-tags—tag-get.php');
-require_once('m-organization-tags—tag-delete.php');
+require_once('m-organization-tags-tag-get.php');
+require_once('m-organization-tags-tag-delete.php');
 
 require_once('m-organization-organization_id-get.php');
 require_once('m-organization-organization_id-put.php');
@@ -14,7 +14,7 @@ require_once('m-organization-organization_id-delete.php');
 require_once('m-organization-organization_id-tags-get.php');
 require_once('m-organization-organization_id-tags-post.php');
 
-require_once('m-organization-organization_id-tags—tag-delete.php');
+require_once('m-organization-organization_id-tags-tag-delete.php');
 
 require_once('m-organization-organization_id-notes-get.php');
 require_once('m-organization-organization_id-notes-post.php');
