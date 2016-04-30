@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {
+=======
+[{
+>>>>>>> origin/gh-pages
 	"name": "Kin Lane Organization API",
 	"description": "I track on around 5K companies, organizations, instiutions, and government agencies. Any slightly formed entity, that has a website address, and a Githbu account is something I pay attention -- if they are doing something interesting (good or bad) with APIs. This is the API I use to track on the relevant organizations in the API sector, making their key information, and API details are available for publishing across my API network.",
 	"image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg",
@@ -6,7 +10,11 @@
 	"tags": ["Kin Lane Organization API"],
 	"created": "2016-04-04",
 	"modified": "2016-04-04",
+<<<<<<< HEAD
 	"url": "https://kin-lane.github.io/organization/",
+=======
+	"url": "https://kin-lane.github.io/organization/"
+>>>>>>> origin/gh-pages
 	"specificationVersion": "0.14",
 	"apis": [{
 		"name": "Kin Lane Organization API",
